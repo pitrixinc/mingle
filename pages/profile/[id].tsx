@@ -40,7 +40,7 @@ const Profile = ({data}: IProps) => {
     
     return (
         
-        <div className="h-full h-[100%] absolute top-[60px] bg-white mt-4 w-[85%] lg:w-[85%] md:w-[100%] sm:w-[60%]">
+        <div className="h-full h-[100%] absolute top-[60px] bg-white mt-4 w-[85%] lg:w-[85%] md:w-[100%] w-[100%]">
             <div className="flex gap-6 md:gap-10 mb-4 bg-white w-full">
             <div className="w-16 h-16 md:w-32 md:h-32">
                     <Image
@@ -65,15 +65,7 @@ const Profile = ({data}: IProps) => {
                     
                     <div>
                      
-                  <div className="flex gap-5 md:gap-10">
-                <Link href="/editprofile">
-                   <button className="border-2 px-2 md:px-4 text-md font-bold text-white bg-[#F51997] flex items-center gap-2 h-12 rounded-xl m-10">
-                       <IoMdAdd className="text-xl" /> {` `}
-                       <span className="hidden md:block">Edit Profile</span>
-                   </button>
-                </Link>
-                
-                </div>
+                 
                </div>
              
 

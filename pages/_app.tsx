@@ -7,6 +7,7 @@ import Sidebar from '../components/Sidebar';
 import '../styles/globals.css';
 import { GoogleOAuthProvider } from '@react-oauth/google'; 
 import Story from '../components/Story';
+import BottomBar from '../components/BottomBar';
 
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -20,8 +21,9 @@ if(isSSR) return null;
 
   return (
     <GoogleOAuthProvider clientId={`${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}`}>
-      <div className="xl:w-[1100px] m-auto overflow-hidden h-[100vh]">
+      <div className="xl:w-[1100px] md:w-[1000px] m-auto overflow-hidden h-[100vh]">
       <Navbar />
+      
       <div className="flex gap-3 md:gap-10">
       
             
@@ -34,14 +36,17 @@ if(isSSR) return null;
             <Component  {...pageProps}/>
             </div>
              
-
+                
             <div className="h-[92vh] overflow-hidden xl:hover:overflow-auto">
                  <Sidebar />
             </div>
-
+        
+        
 
          </div>
+         <BottomBar />
       </div>
+      
   </GoogleOAuthProvider>
   );
 }

@@ -17,9 +17,9 @@ const userProfile = false;
 const normalLink = 'flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-[#F51997] rounded';
 
   return (
-    <div>
+    <div className="hidden md:block">
         <div
-        className="block xl:hidden m-2 ml-4 mt-3 text-xl"
+        className="block xl:hidden  m-2 ml-4 mt-3 text-xl"
         onClick={() => setShowSidebar((prev) => !prev)}
        >
           {showSidebar ? <ImCancelCircle /> : <AiOutlineMenu />}
@@ -40,7 +40,7 @@ const normalLink = 'flex items-center gap-3 hover:bg-primary p-3 justify-center 
               </div>
                   <Discover /> 
                   <SuggestedAccounts /> 
-                  <Footer classNam="hidden md:block"/>
+                  <Footer/>
           </div>
         )}
     </div>
