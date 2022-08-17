@@ -27,20 +27,20 @@ const MiniSearch = () => {
   }
 
   return (
-    <div className="w-full flex justify-between lg:hidden md:hidden block mt-1 items-center border-b-2  border-gray-200 py-2 px-4">
+    <div className="w-full  flex justify-between lg:hidden md:hidden block mt-5 items-center border-b-2  border-gray-200 py-2 px-4">
         
 
-        <div className="relative lg:hidden md:hidden block mb-5 ml-5">
+        <div className="relative lg:hidden md:hidden block mb-5">
           <form
             onSubmit={handleSearch}
-            className="absolute md:static -left-1 bg-white"
+            className="absolute md:static bg-white"
           >
             <input 
               type="text"
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
-              placeholder="Search Accounts and Videos"
-              className="bg-white p-3 md:text-md font-medium border-2 border-gray-140 focus:outline-none focus:border-2 focus:border-gray-300 w-[300px] md:w-[350px] rounded-full md:top-0"
+              placeholder="Search Accounts"
+              className="bg-white p-3 md:text-md font-medium border-2 border-gray-140 focus:outline-none focus:border-2 focus:border-gray-300 w-[40vh] rounded-full md:top-0"
             />
             <button
               onClick={handleSearch}
