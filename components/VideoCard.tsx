@@ -3,21 +3,28 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiVolumeUp, HiVolumeOff } from 'react-icons/hi';
-import { BsPlay, BsFillPlayFill, BsFillPauseFill } from 'react-icons/bs';
+import { BsPlay, BsFillPlayFill, BsFillPauseFill, BsChatText, BsSave2 } from 'react-icons/bs';
 import { GoVerified } from 'react-icons/go';
 
 import { Video } from '../types';
+import { AiOutlineHeart } from 'react-icons/ai';
+
 
 interface IProps {
     post: Video;
 }
-const VideoCard: NextPage<IProps> = ({ post }) => {
+const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
     const [isHover, setIsHover] = useState(false);
     const [playing, setPlaying] = useState(false);
     const [isVideoMuted, setIsVideoMuted] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
 
+   
     const onVideoPress = () => {
+     
+
+      
+
         if(playing) {
             videoRef?.current?.pause();
             setPlaying(false);
@@ -68,8 +75,9 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
                 onMouseLeave={() => setIsHover(false)}
                 className="rounded-3xl">
                 <Link href={`/detail/${post._id}`}>
+                
                   <div>
-
+                  <p className="px-1 m-2 mr-0 md:text-md text-xs text-primary text-justify justify-center">{post.caption}</p>
                     <video
                        loop
                        ref={videoRef}
@@ -78,9 +86,11 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
                     >
                      
                     </video>
-                    <div className="flex items-center gap-2 mb-0">
-                    <p className="flex gap-1 items-center md:text-md font-semibold text-sm lowercase">{post.postedBy.userName.replace(' ','')}:</p>   <p className="px-1 m-2 mr-0 md:text-md text-xs text-primary text-justify justify-center">{post.caption}</p>
-                    </div>
+                    <div className="mt-5 px-10 flex justify-between items-center">
+     
+<div className="text-3xl cursor-pointer text-[#F51997]"><AiOutlineHeart/></div> <div className="text-2xl text-[#F51997] cursor-pointer "><BsChatText/></div> <div className="text-2xl text-[#F51997] cursor-pointer"><BsSave2 /></div>
+          </div>
+                    
                     </div>
                 </Link>
                 {isHover && (
