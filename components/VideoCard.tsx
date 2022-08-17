@@ -78,7 +78,9 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
                     >
                      
                     </video>
-                     <p className="px-2 m-2 text-md font-semibold text-primary text-justify justify-center">{post.caption}</p>
+                    <div className="flex items-center gap-2 mb-0">
+                    <p className="flex gap-1 items-center md:text-md font-semibold text-sm lowercase">{post.postedBy.userName.replace(' ','')}:</p>   <p className="px-1 m-2 mr-0 md:text-md text-xs text-primary text-justify justify-center">{post.caption}</p>
+                    </div>
                     </div>
                 </Link>
                 {isHover && (
