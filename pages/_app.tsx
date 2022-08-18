@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
+import BottomBar from '../components/BottomBar';
 
 import '../styles/globals.css';
 import { GoogleOAuthProvider } from '@react-oauth/google'; 
@@ -41,7 +42,7 @@ if(isSSR) return null;
                  <Sidebar />
             </div>
         
-        
+           <BottomBar />
 
          </div>
          
