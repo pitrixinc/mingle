@@ -6,8 +6,7 @@ import Sidebar from '../components/Sidebar';
 
 import '../styles/globals.css';
 import { GoogleOAuthProvider } from '@react-oauth/google'; 
-import Story from '../components/Story';
-import BottomBar from '../components/BottomBar';
+
 import MiniSearch from '../components/MiniSearch';
 
 
@@ -31,7 +30,7 @@ if(isSSR) return null;
             <div className="mt-4 flex flex-col gap-10 overflow-auto h-[88vh] videos flex-1">
             <MiniSearch />
           <div>
-            <Story />
+            
           </div>
 
             <Component  {...pageProps}/>
@@ -45,7 +44,7 @@ if(isSSR) return null;
         
 
          </div>
-         <BottomBar />
+         
       </div>
       
   </GoogleOAuthProvider>
