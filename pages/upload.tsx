@@ -16,6 +16,7 @@ const Upload = () => {
   const [loading, setLoading] = useState<Boolean>(false);
   const [savingPost, setSavingPost] = useState<Boolean>(false);
   const [videoAsset, setVideoAsset] = useState<SanityAssetDocument | undefined>();
+  const [imageAsset, setImageAsset] = useState<SanityAssetDocument | undefined>();
   const [wrongFileType, setWrongFileType] = useState<Boolean>(false);
 
   const userProfile: any = useAuthStore((state) => state.userProfile);
@@ -41,6 +42,7 @@ const Upload = () => {
         })
         .then((data) => {
           setVideoAsset(data);
+          setImageAsset(data);
           setLoading(false);
         });
     } else {
@@ -80,6 +82,7 @@ const Upload = () => {
   const handleDiscard = () => {
     setSavingPost(false);
     setVideoAsset(undefined);
+    setImageAsset(undefined);
     setCaption('');
     setTopic('');
   };
