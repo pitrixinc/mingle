@@ -38,6 +38,22 @@ const normalLink = 'flex items-center gap-3 hover:bg-primary p-3 justify-center 
                   </div>
                  </Link>
               </div>
+
+
+              <div className="xl:border-b-2 border-gray-200 pb-4">
+                 <Link href="/">
+                  <div className={normalLink}>
+                    <p className="text-2xl">
+                      <AiFillHome />
+                      </p>
+                      <span className="text-xl hidden xl:block">
+                        Private Chats/ Channels 
+                      </span>
+                  </div>
+                 </Link>
+              </div>
+
+
                   <Discover /> 
                   <SuggestedAccounts /> 
                   <Footer/>
