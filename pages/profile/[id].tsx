@@ -40,7 +40,7 @@ const Profile = ({data}: IProps) => {
     
     return (
         
-        <div className="h-full h-[100%] absolute top-[60px] bg-white mt-4 lg:w-[85%] md:w-[100%] w-[100%]">
+        <div className="h-full h-[100%] absolute top-[60px] bg-white mt-0 lg:w-[85%]  w-[100%]">
             <div className="flex gap-6 md:gap-10 mb-4 bg-white w-full">
             <div className="w-16 h-16 md:w-32 md:h-32">
                     <Image
