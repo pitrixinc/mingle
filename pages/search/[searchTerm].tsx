@@ -22,7 +22,7 @@ const Search = ({ videos }: {videos: Video[] }) => {
      const searchedAccounts = allUsers.filter((user: IUser) => user.userName.toLowerCase().includes(searchTerm.toLowerCase()))
 
   return (
-    <div className="h-[100vh] absolute top-[60px] bg-white overflow-auto mt-4 w-[100%] md:w-[87%] lg:w-[54%]">
+    <div className="h-[100vh] absolute top-[60px] bg-white overflow-auto mt-0 w-[100%]">
         <div className="flex gap-10 mb-10 mt-10 border-b-2 border-gray-200 bg-white ">
                    <p className={`text-xl font-semibold cursor-pointer mt-2 ${accounts}`} onClick={() => setIsAccounts(true)}>Accounts</p>
                    <p className={`text-xl font-semibold cursor-pointer mt-2 ${isVideos}`} onClick={() => setIsAccounts(false)}>Videos</p>
