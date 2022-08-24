@@ -6,6 +6,13 @@ import { GoVerified } from 'react-icons/go';
 import useAuthStore from '../store/authStore';
 import { IUser } from '../types';
 
+
+interface IProps {
+  fetchAllUsers: () => void;
+  allUsers: IUser[];
+}
+
+
 const Story = () => {
    const { fetchAllUsers, allUsers } = useAuthStore();
 
