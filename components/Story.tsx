@@ -13,6 +13,10 @@ const Story = () => {
       fetchAllUsers();
    }, [fetchAllUsers]);
 
+   const users = allUsers
+   .sort(() => 0.5 - Math.random())
+   .slice(0, allUsers.length);
+
   return (
     <div className="xl:border-b-2 border-gray-200 pb-4 flex mr-4">
        
