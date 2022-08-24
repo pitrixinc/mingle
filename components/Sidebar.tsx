@@ -49,7 +49,7 @@ const normalLink = 'flex items-center gap-3 hover:bg-primary p-3 justify-center 
                       <HiOutlineChat />
                       </p>
                       <span className="text-xl hidden xl:block">
-                        Private Chats/ Channels 
+                        Private Chats / Channels 
                       </span>
                   </div>
                  </Link>
