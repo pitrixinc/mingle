@@ -77,7 +77,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                 <Link href={`/detail/${post._id}`}>
                 
                   <div>
-                  <p className="px-1 m-2 mr-0 md:text-md text-xs text-primary text-justify justify-center">{post.caption}</p>
+                  <p className="px-1 m-2 mr-0 md:text-md text-md text-primary text-justify justify-center">{post.caption}</p>
                     <video
                        loop
                        ref={videoRef}
@@ -88,7 +88,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                     </video>
                     <div className="mt-5 px-10 flex justify-between items-center">
      
-<div className="text-3xl cursor-pointer text-[#F51997]"><AiOutlineHeart/></div> <div className="text-2xl text-[#F51997] cursor-pointer "><BsChatText/></div> <div className="text-2xl text-[#F51997] cursor-pointer"><BsSave2 /></div>
+<div className="text-xl cursor-pointer text-black"><AiOutlineHeart/></div> <div className="text-xl text-black cursor-pointer "><BsChatText/></div> <div className="text-xl text-black cursor-pointer"><BsSave2 /></div>
           </div>
                     
                     </div>
