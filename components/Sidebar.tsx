@@ -23,7 +23,7 @@ const Sidebar: NextPage = () => {
   return (
     <div>
       <div
-        className='block sm:hidden m-2 ml-4 mt-3 text-xl'
+        className='block xl:hidden m-2 ml-4 mt-3 text-xl'
         onClick={() => setShowSidebar(!showSidebar)}
       >
         {showSidebar ? <ImCancelCircle /> : <AiOutlineMenu />}
@@ -37,7 +37,7 @@ const Sidebar: NextPage = () => {
                   <AiFillHome />
                 </p>
                 <span className='capitalize text-xl hidden xl:block'>
-                  For You
+                  For You and me
                 </span>
               </div>
             </Link>
