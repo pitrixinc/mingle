@@ -39,7 +39,7 @@ if(isSSR) return null;
             </div>
              
                 
-            <div className="h-[92vh] sm:hidden overflow-hidden xl:hover:overflow-auto">
+            <div className="h-[92vh] hidden overflow-hidden xl:hover:overflow-auto">
                  <Sidebar />
             </div>
         
