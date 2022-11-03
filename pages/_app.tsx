@@ -30,7 +30,7 @@ if(isSSR) return null;
       
             
             <div className="mt-4 flex flex-col gap-10 overflow-auto h-[88vh] videos flex-1">
-            <MiniSearch />
+            
           <div>
             <Story />
           </div>
