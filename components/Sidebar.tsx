@@ -37,7 +37,7 @@ const Sidebar: NextPage = () => {
                   <AiFillHome />
                 </p>
                 <span className='capitalize text-xl hidden xl:block'>
-                  For You and Us
+                  For You
                 </span>
               </div>
             </Link>
