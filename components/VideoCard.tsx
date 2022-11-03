@@ -77,11 +77,11 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                 <Link href={`/detail/${post._id}`}>
                 
                   <div>
-                  <p className="px-1 m-2 mr-0 md:text-md text-md text-primary text-justify justify-center">{post.caption}</p>
+                  <p className="px-1 ml-1 mb-2 mt-2 mr-0 md:text-md text-md text-primary text-justify justify-center">{post.caption}</p>
                     <video
                        loop
                        ref={videoRef}
-                       className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[320px] w-[50px] w-full aspect-video rounded cursor-pointer bg-black"
+                       className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[320px] w-[500px] w-full aspect-video rounded cursor-pointer bg-black"
                        src={post.video.asset.url}
                     >
                      
