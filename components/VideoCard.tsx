@@ -69,7 +69,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
               </div>
           </div>
        </div>
-          <div className="lg:ml-20 mr-5 ml-5 flex gap-2 relative mt-0">
+          <div className="lg:ml-20 mr-2 ml-1 flex gap-2 relative mt-0">
              <div 
                 onMouseEnter={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}
@@ -77,11 +77,11 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                 <Link href={`/detail/${post._id}`}>
                 
                   <div>
-                  <p className="px-1 ml-1 mb-2 mt-2 mr-0 md:text-md text-md text-primary text-justify justify-center">{post.caption}</p>
+                  <p className="px-1 ml-0 mb-2 mt-2 mr-0 md:text-md text-md text-primary text-justify justify-center">{post.caption}</p>
                     <video
                        loop
                        ref={videoRef}
-                       className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[320px] w-[500px] w-full aspect-video rounded cursor-pointer bg-black"
+                       className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[320px] w-[700px] w-full aspect-video rounded cursor-pointer bg-black"
                        src={post.video.asset.url}
                     >
                      
