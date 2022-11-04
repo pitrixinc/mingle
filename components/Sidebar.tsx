@@ -53,7 +53,7 @@ const Sidebar: NextPage = () => {
                     <p className="text-2xl">
                       <HiOutlineChat />
                       </p>
-                      <span className="text-xl hidden xl:block">
+                      <span className="text-md hidden xl:block">
                         Private Chats / Channels
                       </span>
                   </div>
@@ -67,7 +67,7 @@ const Sidebar: NextPage = () => {
                     <p className="text-2xl">
                       <BiVideoPlus />
                       </p>
-                      <span className="text-xl hidden xl:block">
+                      <span className="text-md hidden xl:block">
                         Video Meeting
                       </span>
                   </div>
@@ -81,7 +81,7 @@ const Sidebar: NextPage = () => {
                     <p className="text-2xl">
                       <SiYourtraveldottv />
                       </p>
-                      <span className="text-xl hidden xl:block">
+                      <span className="text-md hidden xl:block">
                         Travel Advisor
                       </span>
                   </div>
@@ -94,7 +94,7 @@ const Sidebar: NextPage = () => {
                     <p className="text-2xl">
                       <FiSettings />
                       </p>
-                      <span className="text-xl hidden xl:block">
+                      <span className="text-md hidden xl:block">
                         Setting
                       </span>
                   </div>
