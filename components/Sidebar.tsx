@@ -72,6 +72,20 @@ const Sidebar: NextPage = () => {
                  </Link>
               </div>
 
+
+              <div className="xl:border-b-2 border-gray-200 pb-4">
+                 <Link href="https://mymingle.netlify.app">
+                  <div className="flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-black rounded">
+                    <p className="text-2xl">
+                      <BiVideoPlus />
+                      </p>
+                      <span className="text-xl hidden xl:block">
+                        Travel Advisor
+                      </span>
+                  </div>
+                 </Link>
+              </div>
+
           
           <Discover />
           <SuggestedAccounts
@@ -79,6 +93,7 @@ const Sidebar: NextPage = () => {
             allUsers={allUsers}
           />
           <Footer />
+
         </div>
       )}
     </div>
