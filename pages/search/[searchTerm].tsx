@@ -55,7 +55,7 @@ const Search = ({ videos }: {videos: Video[] }) => {
               </div>
             </Link>
                           ) )
-                        ): <NoResults text={`No video results for '${searchTerm}'`}/>}
+                        ): <NoResults text={`No account results for '${searchTerm}'`}/>}
                     </div>
                 ): <div className="md:mt-16 flex flex-wrap gap-6 md:justify-start">
                     {videos.length ? (
