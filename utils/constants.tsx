@@ -1,6 +1,7 @@
 import { BsCode, BsEmojiSunglasses } from 'react-icons/bs';
 import { GiCakeSlice, GiGalaxy, GiLipstick } from 'react-icons/gi';
 import { FaPaw, FaMedal, FaGamepad } from 'react-icons/fa';
+import Link from 'next/link';
 
 export const topics = [
   {
@@ -37,6 +38,6 @@ export const topics = [
   },
 ];
 
-export const footerList1 = ['About', 'Newsroom', 'Store', 'Contact', 'Carriers', 'ByteDance', 'Creator Directory']
+export const footerList1 = [<Link href="/about-us-1.html">About</Link>, 'Newsroom', 'Store', 'Contact', 'Carriers', 'ByteDance', 'Creator Directory']
 export const footerList2 = [ 'Mingle for Good','Advertise','Developers','Transparency','Mingle Rewards' ]
 export const footerList3 = [ 'Help', 'Safety', 'Terms', 'Privacy', 'Creator Portal', 'Community Guidelines' ]
