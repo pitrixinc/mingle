@@ -38,6 +38,6 @@ export const topics = [
   },
 ];
 
-export const footerList1 = [<Link href="/about-us-1.html">About</Link>, 'Newsroom', 'Store', 'Contact', 'Carriers', 'ByteDance', 'Creator Directory']
+export const footerList1 = [<Link href="./about-us-1.html">About</Link>, 'Newsroom', 'Store', 'Contact', 'Carriers', 'ByteDance', 'Creator Directory']
 export const footerList2 = [ 'Mingle for Good','Advertise','Developers','Transparency','Mingle Rewards' ]
 export const footerList3 = [ 'Help', 'Safety', 'Terms', 'Privacy', 'Creator Portal', 'Community Guidelines' ]
