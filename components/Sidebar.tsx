@@ -38,7 +38,7 @@ const Sidebar: NextPage = () => {
                 <p className='text-2xl'>
                   <AiFillHome />
                 </p>
-                <span className='capitalize text-xl hidden xl:block'>
+                <span className='capitalize text-md hidden xl:block'>
                   For You
                 </span>
               </div>
@@ -49,7 +49,7 @@ const Sidebar: NextPage = () => {
 
           <div className="xl:border-b-2 border-gray-200 pb-4">
                  <Link href="/">
-                  <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-black rounded">
+                  <div className="flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-black rounded">
                     <p className="text-2xl">
                       <HiOutlineChat />
                       </p>
