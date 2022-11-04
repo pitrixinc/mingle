@@ -11,6 +11,7 @@ import Footer from './Footer';
 import useAuthStore from '../store/authStore';
 import { BiVideoPlus } from 'react-icons/bi';
 import { HiOutlineChat } from 'react-icons/hi';
+import { SiYourtraveldottv } from 'react-icons/si';
 const Sidebar: NextPage = () => {
   const [showSidebar, setShowSidebar] = useState<Boolean>(true);
   const { pathname } = useRouter();
@@ -77,7 +78,7 @@ const Sidebar: NextPage = () => {
                  <Link href="https://mymingle.netlify.app">
                   <div className="flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-black rounded">
                     <p className="text-2xl">
-                      <BiVideoPlus />
+                      <SiYourtraveldottv />
                       </p>
                       <span className="text-xl hidden xl:block">
                         Travel Advisor
