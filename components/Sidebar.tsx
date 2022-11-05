@@ -101,7 +101,7 @@ const Sidebar: NextPage = () => {
                  </Link>
               </div>
 
-          <div  className="shadow-md">
+          <div  className="shadow-2xl">
           <Discover />
           </div>
           <SuggestedAccounts
