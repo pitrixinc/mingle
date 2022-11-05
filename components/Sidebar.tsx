@@ -112,9 +112,9 @@ const Sidebar: NextPage = () => {
           />
           </div>
 
-          <div  className="shadow-lg">
+          
           <Footer />
-          </div>
+          
 
         </div>
       )}
