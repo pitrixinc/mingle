@@ -31,8 +31,8 @@ const Sidebar: NextPage = () => {
         {showSidebar ? <ImCancelCircle /> : <AiOutlineMenu />}
       </div>
       {showSidebar && (
-        <div className='xl:w-400 w-20 flex flex-col justify-start mb-10 border-r-2 border-gray-100 xl:border-0 p-3 shadow-l-xl'>
-          <div className='xl:border-b-2 border-gray-200 xl:pb-4'>
+        <div className='xl:w-400 w-20 flex flex-col justify-start mb-10 border-r-2 border-gray-100 xl:border-0 p-3 shadow-lg'>
+          <div className='xl:border-b-2 border-gray-200 xl:pb-4 shadow-md'>
             <Link href='/'>
               <div className={pathname === '/' ? activeLink : normalLink}>
                 <p className='text-2xl'>
@@ -47,7 +47,7 @@ const Sidebar: NextPage = () => {
 
 
 
-          <div className="xl:border-b-2 border-gray-200 pb-1">
+          <div className="xl:border-b-2 border-gray-200 pb-1 shadow-md">
                  <Link href="/">
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
@@ -61,7 +61,7 @@ const Sidebar: NextPage = () => {
               </div>
 
 
-              <div className="xl:border-b-2 border-gray-200 pb-1">
+              <div className="xl:border-b-2 border-gray-200 pb-1 shadow-md">
                  <Link href="https://mymingle.netlify.app">
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
@@ -75,7 +75,7 @@ const Sidebar: NextPage = () => {
               </div>
 
 
-              <div className="xl:border-b-2 border-gray-200 pb-1">
+              <div className="xl:border-b-2 border-gray-200 pb-1 shadow-md">
                  <Link href="https://mymingle.netlify.app">
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
@@ -88,7 +88,7 @@ const Sidebar: NextPage = () => {
                  </Link>
               </div>
 
-              <div className="xl:border-b-2 border-gray-200 pb-1">
+              <div className="xl:border-b-2 border-gray-200 pb-1 shadow-md">
                  <Link href="https://mymingle.netlify.app">
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
