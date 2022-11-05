@@ -31,7 +31,7 @@ const Sidebar: NextPage = () => {
         {showSidebar ? <ImCancelCircle /> : <AiOutlineMenu />}
       </div>
       {showSidebar && (
-        <div className='xl:w-400 w-20 flex flex-col justify-start mb-10 border-r-2 border-gray-100 xl:border-0 p-3 shadow-lg'>
+        <div className='xl:w-400 w-20 flex flex-col justify-start mb-10 border-r-2 border-gray-100 xl:border-0 p-3 shadow-2xl'>
           <div className='xl:border-b-2 border-gray-200 xl:pb-4'>
             <Link href='/'>
               <div className={pathname === '/' ? activeLink : normalLink}>
@@ -94,21 +94,27 @@ const Sidebar: NextPage = () => {
                     <p className="text-2xl">
                       <FiSettings />
                       </p>
-                      <span className="text-md hidden xl:block">
+                      <span className="text-md hidden xl:block shadow-lg">
                         Setting
                       </span>
                   </div>
                  </Link>
               </div>
 
-          <div  className="shadow-2xl">
+          <div  className="shadow-lg">
           <Discover />
           </div>
+
+          <div  className="shadow-lg">
           <SuggestedAccounts
             fetchAllUsers={fetchAllUsers}
             allUsers={allUsers}
           />
+          </div>
+
+          <div  className="shadow-lg">
           <Footer />
+          </div>
 
         </div>
       )}
