@@ -25,7 +25,7 @@ const Sidebar: NextPage = () => {
   return (
     <div>
       <div
-        className='md:block sm:block hidden m-2 ml-1 mt-3 text-xl'
+        className='block m-2 ml-1 mt-3 text-xl'
         onClick={() => setShowSidebar(!showSidebar)}
       >
         {showSidebar ? <ImCancelCircle /> : <AiOutlineMenu />}
@@ -49,7 +49,7 @@ const Sidebar: NextPage = () => {
 
           <div className="xl:border-b-2 border-gray-200 pb-1">
                  <Link href="/">
-                  <div className="flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-black rounded">
+                  <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
                       <HiOutlineChat />
                       </p>
@@ -63,7 +63,7 @@ const Sidebar: NextPage = () => {
 
               <div className="xl:border-b-2 border-gray-200 pb-1">
                  <Link href="https://mymingle.netlify.app">
-                  <div className="flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-black rounded">
+                  <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
                       <BiVideoPlus />
                       </p>
@@ -77,7 +77,7 @@ const Sidebar: NextPage = () => {
 
               <div className="xl:border-b-2 border-gray-200 pb-1">
                  <Link href="https://mymingle.netlify.app">
-                  <div className="flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-black rounded">
+                  <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
                       <SiYourtraveldottv />
                       </p>
@@ -90,7 +90,7 @@ const Sidebar: NextPage = () => {
 
               <div className="xl:border-b-2 border-gray-200 pb-1">
                  <Link href="https://mymingle.netlify.app">
-                  <div className="flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-black rounded">
+                  <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
                       <FiSettings />
                       </p>
