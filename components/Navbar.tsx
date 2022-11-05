@@ -7,7 +7,7 @@ import { AiOutlineLogout } from 'react-icons/ai';
 import { BiSearch } from 'react-icons/bi';
 import { IoMdAdd } from 'react-icons/io';
 
-import Logo from '../utils/mingle.jpg';
+import Logo from '../utils/mingle.png';
 import { createOrGetUser } from '../utils';
 
 import useAuthStore from '../store/authStore';
