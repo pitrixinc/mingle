@@ -23,7 +23,7 @@ const Sidebar: NextPage = () => {
   const normalLink = 'flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold rounded';
 
   return (
-    <div>
+    <div className='shadow-xl'>
       <div
         className='block m-2 ml-1 mt-3 text-xl'
         onClick={() => setShowSidebar(!showSidebar)}
