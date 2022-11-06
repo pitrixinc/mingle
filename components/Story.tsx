@@ -25,7 +25,7 @@ const Story = () => {
    .slice(0, allUsers.length);
 
   return (
-    <div className="xl:border-b-2 border-gray-200 pb-4 flex mr-0">
+    <div className="hidden md:block xl:block xl:border-b-2 border-gray-200 pb-4 flex mr-0">
        
         
         <div className="flex overflow-x-auto space-x-1 snap-x">
@@ -37,7 +37,7 @@ const Story = () => {
                        src={user.image}
                        width={35}
                        height={35}
-                       className="rounded-full md:rounded-[10px] sm:w-50 sm:h-65"
+                       className="rounded-full md:rounded-[10px] sm:w-35 sm:h-35"
                        alt="user profile"
                        layout="responsive"
                     />
