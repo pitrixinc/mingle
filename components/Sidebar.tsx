@@ -25,7 +25,7 @@ const Sidebar: NextPage = () => {
   return (
     <div>
       <div
-        className='block m-2 ml-1 mt-3 text-xl'
+        className='sm:hidden block m-2 ml-1 mt-3 text-xl'
         onClick={() => setShowSidebar(!showSidebar)}
       >
         {showSidebar ? <ImCancelCircle /> : <AiOutlineMenu />}
