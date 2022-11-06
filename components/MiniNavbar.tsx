@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Router, { useRouter } from 'next/router';
 import { GoogleLogin, googleLogout } from '@react-oauth/google';
 import { AiOutlineLogout } from 'react-icons/ai';
-import { BiSearch, BiVideoPlus } from 'react-icons/bi';
+import { BiSearch, BiVideoPlus, BiCategory } from 'react-icons/bi';
 import { IoMdAdd } from 'react-icons/io';
 import { SiYourtraveldottv } from 'react-icons/si';
 
@@ -83,6 +83,17 @@ const MiniNavbar = () => {
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
                       <SiYourtraveldottv />
+                      </p>
+                      
+                  </div>
+                 </Link>
+              </div>
+
+              <div className="xl:border-b-2 border-gray-200 pb-1">
+                 <Link href="https://mymingle.netlify.app">
+                  <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
+                    <p className="text-2xl">
+                      <BiCategory />
                       </p>
                       
                   </div>
