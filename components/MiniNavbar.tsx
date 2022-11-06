@@ -14,7 +14,7 @@ import { createOrGetUser } from '../utils';
 import useAuthStore from '../store/authStore';
 
 import { AiFillHome, AiOutlineMenu } from 'react-icons/ai';
-import { BsMessenger } from 'react-icons/bs';
+import { RiMessengerLine } from 'react-icons/ri';
 
 const MiniNavbar = () => {
   const { userProfile, addUser, removeUser } = useAuthStore();
@@ -72,7 +72,7 @@ const MiniNavbar = () => {
                  <Link href="/">
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
-                      <BsMessenger />
+                      <RiMessengerLine />
                       </p>
                       
                   </div>
