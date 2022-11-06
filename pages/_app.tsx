@@ -29,11 +29,11 @@ if(isSSR) return null;
       <div>
       <MiniNavbar />
       </div>
-      
+
       <div className="flex gap-3 md:gap-10">
       
             
-            <div className="mt-4 flex flex-col gap-10 overflow-auto h-[88vh] videos flex-1">
+            <div className="mt-4 flex flex-col gap-10 md:overflow-auto overflow:hidden h-[88vh] videos flex-1">
             
           <div>
             <Story />
