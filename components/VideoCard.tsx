@@ -8,7 +8,8 @@ import { GoVerified } from 'react-icons/go';
 
 import { Video } from '../types';
 import { AiOutlineHeart } from 'react-icons/ai';
-
+import { GoComment } from 'react-icons/go';
+import { FiShare } from 'react-icons/fi';
 
 interface IProps {
     post: Video;
@@ -88,7 +89,35 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                     </video>
                     <div className="mt-5 px-10 flex justify-between items-center">
      
-<div className="text-xl cursor-pointer text-black"><AiOutlineHeart/></div> <div className="text-xl text-black cursor-pointer "><BsChatText/></div> <div className="text-xl text-black cursor-pointer"><BsSave2 /></div>
+                    <div className="xl:border-b-2 border-gray-200 pb-1">
+                  <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
+                    <p className="text-2xl">
+                      <AiOutlineHeart />
+                      </p>
+                      
+                  </div>
+                 
+              </div> 
+
+              <div className="xl:border-b-2 border-gray-200 pb-1">
+                  <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
+                    <p className="text-2xl">
+                      <GoComment />
+                      </p>
+                      
+                  </div>
+                 
+              </div> 
+ 
+              <div className="xl:border-b-2 border-gray-200 pb-1">
+                  <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
+                    <p className="text-2xl">
+                      <FiShare />
+                      </p>
+                      
+                  </div>
+                 
+              </div>
           </div>
                     
                     </div>
