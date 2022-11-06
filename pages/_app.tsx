@@ -49,10 +49,6 @@ if(isSSR) return null;
             <div className="h-[92vh] overflow-hidden xl:hover:overflow-auto">
                  <Sidebar />
             </div>
-        
-  
-        
-
 
          </div>
 
@@ -60,9 +56,6 @@ if(isSSR) return null;
       </div>
       
 
-      <div>
-      <MiniNavbar />
-      </div>
   </GoogleOAuthProvider>
   );
 }
