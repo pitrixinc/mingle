@@ -45,7 +45,7 @@ const MiniNavbar = () => {
   }
 
   return (
-    <div className="w-full flex justify-between items-center border-b-2 border-gray-200 py-1 px-1 xl:hidden md:hidden block shadow-lg mt-0">
+    <div className="w-full flex justify-between items-center border-b-2 border-gray-200 py-1 px-1 xl:hidden md:hidden block shadow-xl mt-0">
         <div className='xl:border-b-2 border-gray-200 xl:pb-4'>
             <Link href='/'>
               <div className={pathname === '/' ? activeLink : normalLink}>
