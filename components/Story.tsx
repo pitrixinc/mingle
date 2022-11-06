@@ -44,13 +44,7 @@ const Story = () => {
                   </div>
                   
                     
-                  <div>
-                    <p className="flex gap-1 items-center text-md font-semibold lowercase text-primary">
-                      {user.userName.replace(' ','_').substr(0, 4)}
-                      <GoVerified className="text-pink-400"/>
-                    </p>
-                   
-                  </div>
+                  
               </div>
             </Link>
           ))}
