@@ -8,7 +8,7 @@ import Sidebar from '../components/Sidebar';
 import '../styles/globals.css';
 import { GoogleOAuthProvider } from '@react-oauth/google'; 
 
-import MiniSearch from '../components/MiniSearch';
+import MiniNavbar from '../components/MiniNavbar';
 import Story from '../components/Story';
 
 
@@ -25,7 +25,7 @@ if(isSSR) return null;
     <GoogleOAuthProvider clientId={`${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}`}>
       <div className="xl:w-[1100px] md:w-[1000px] w-[100%] m-auto overflow-hidden h-[100vh]">
       <Navbar />
-      
+      <MiniNavbar />
       <div className="flex gap-3 md:gap-10">
       
             
