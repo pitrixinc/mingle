@@ -33,7 +33,7 @@ if(isSSR) return null;
       <div className="flex gap-3 md:gap-10">
       
             
-            <div className="mt-4 mr-0 flex flex-col gap-10 overflow-auto h-[88vh] videos flex-1">
+            <div className="mt-4 mr-0 flex w-[100%] flex-col gap-10 overflow-auto h-[88vh] videos flex-1">
             
           <div>
             <Story />
