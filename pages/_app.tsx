@@ -50,6 +50,10 @@ if(isSSR) return null;
   
 
          </div>
+
+         <div>
+      <MiniNavbar />
+      </div>
          
       </div>
       
