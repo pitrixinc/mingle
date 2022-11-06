@@ -88,13 +88,13 @@ const Sidebar: NextPage = () => {
                  </Link>
               </div>
 
-              <div className="xl:border-b-2 border-gray-200 pb-1">
+              <div className="xl:border-b-2 border-gray-200 pb-1 shadow-lg">
                  <Link href="https://mymingle.netlify.app">
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
                       <FiSettings />
                       </p>
-                      <span className="text-md hidden xl:block shadow-lg">
+                      <span className="text-md hidden xl:block">
                         Setting
                       </span>
                   </div>
