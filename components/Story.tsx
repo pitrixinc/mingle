@@ -47,7 +47,7 @@ const Story = () => {
                   <div>
                     <p className="flex gap-1 items-center text-md font-semibold lowercase text-primary">
                       {user.userName.replace(' ','_').substr(0, 7)}
-                      <GoVerified className="text-blue-400"/>
+                      <GoVerified className="text-[#F51997]-400"/>
                     </p>
                    
                   </div>
