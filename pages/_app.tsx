@@ -23,7 +23,7 @@ if(isSSR) return null;
 
   return (
     <GoogleOAuthProvider clientId={`${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}`}>
-      <div className="xl:w-[1100px] md:w-[1000px] w-[100%] m-auto overflow-hidden h-[100vh]">
+      <div className="xl:w-[1100px] md:w-[1000px] w-[100%] md:m-auto xl:m-auto m-0 overflow-hidden h-[100vh]">
       <Navbar />
 
       <div>
