@@ -35,8 +35,8 @@ const Story = () => {
                   <div className="sm:w-29 sm:h-29 w-40 h-40">
                     <Image
                        src={user.image}
-                       width={40}
-                       height={48}
+                       width={35}
+                       height={42}
                        className="rounded-[10px]"
                        alt="user profile"
                        layout="responsive"
