@@ -73,7 +73,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
              <div 
                 onMouseEnter={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}
-                className="rounded-3xl">
+                className="rounded-3xl mr-0">
                 <Link href={`/detail/${post._id}`}>
                 
                   <div>
@@ -81,7 +81,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                     <video
                        loop
                        ref={videoRef}
-                       className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[320px] w-[100%] w-full aspect-video rounded cursor-pointer bg-black sm:mr-0"
+                       className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[320px] w-[100%] w-full aspect-video rounded cursor-pointer bg-black mr-0"
                        src={post.video.asset.url}
                     >
                      
