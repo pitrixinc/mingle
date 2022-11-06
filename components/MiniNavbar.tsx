@@ -12,10 +12,26 @@ import { createOrGetUser } from '../utils';
 
 import useAuthStore from '../store/authStore';
 
+import { AiFillHome, AiOutlineMenu } from 'react-icons/ai';
+
 const MiniNavbar = () => {
   const { userProfile, addUser, removeUser } = useAuthStore();
   const [searchValue, setSearchValue] = useState('');
   const router =useRouter();
+
+  
+
+
+
+  const { pathname } = useRouter();
+  const { fetchAllUsers, allUsers }: any = useAuthStore();
+
+  const activeLink = 'flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-[#F51997] rounded';
+
+  const normalLink = 'flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold rounded';
+
+
+
 
   const handleSearch = (e: { preventDefault:() => void}) => {
     e.preventDefault(); 
@@ -28,16 +44,16 @@ const MiniNavbar = () => {
 
   return (
     <div className="w-full flex justify-between items-center border-b-2 border-gray-200 py-2 px-4 xl:hidden md:hidden block">
-        <Link href="/">
-           <div className="w-[100px] md:w-[130px]">
-              <Image 
-                className="cursor-pointer"
-                src={Logo}
-                alt="Mingle"
-                layout="responsive"
-              />
-           </div>
-        </Link>
+        <div className='xl:border-b-2 border-gray-200 xl:pb-4'>
+            <Link href='/'>
+              <div className={pathname === '/' ? activeLink : normalLink}>
+                <p className='text-2xl'>
+                  <AiFillHome />
+                </p>
+                
+              </div>
+            </Link>
+          </div>
 
         <div className="relative hidden md:block">
           <form
