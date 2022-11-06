@@ -25,7 +25,7 @@ const Story = () => {
    .slice(0, allUsers.length);
 
   return (
-    <div className="xl:border-b-2 border-gray-200 pb-4 flex mr-0">
+    <div className="xl:border-b-2 border-gray-200 pb-4 flex mr-4">
        
         
         <div className="flex overflow-x-auto space-x-5 snap-x">
