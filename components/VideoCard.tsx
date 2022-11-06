@@ -87,7 +87,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                     >
                      
                     </video>
-                    <div className="mt-5 px-10 flex justify-between items-center">
+                    <div className="mt-2 px-3 flex justify-between items-center">
      
                     <div className="xl:border-b-2 border-gray-200 pb-1">
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
