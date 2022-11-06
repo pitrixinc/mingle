@@ -32,7 +32,7 @@ const Story = () => {
           {allUsers.slice(0, 20).map((user: IUser) => (
             <Link href={`/profile/${user._id}`} key={user._id}>
               <div className="gap-3 hover:bg-primary p-2 cursor-pointer font-semibold rounded">
-                  <div className="w-40 h-40">
+                  <div className="sm:w-29 sm:h-29 w-40 h-40">
                     <Image
                        src={user.image}
                        width={40}
