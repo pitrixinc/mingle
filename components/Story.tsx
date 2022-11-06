@@ -28,16 +28,16 @@ const Story = () => {
     <div className="xl:border-b-2 border-gray-200 pb-4 flex mr-0">
        
         
-        <div className="flex overflow-x-auto space-x-2 snap-x">
+        <div className="flex overflow-x-auto space-x-5 snap-x">
           {allUsers.slice(0, 20).map((user: IUser) => (
             <Link href={`/profile/${user._id}`} key={user._id}>
-              <div className="gap-3 hover:bg-primary p-2 cursor-pointer font-semibold rounded">
+              <div className="gap-1 hover:bg-primary p-2 cursor-pointer font-semibold rounded">
                   <div className="w-29 h-29 md:w-40 md:h-40">
                     <Image
                        src={user.image}
                        width={35}
                        height={42}
-                       className="sm:rounded-full rounded-[10px] sm:w-25 sm:h-30"
+                       className="rounded-full md:rounded-[10px] sm:w-25 sm:h-30"
                        alt="user profile"
                        layout="responsive"
                     />
