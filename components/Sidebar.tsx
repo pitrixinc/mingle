@@ -54,7 +54,7 @@ const Sidebar: NextPage = () => {
                       <HiOutlineChat />
                       </p>
                       <span className="text-md hidden xl:block">
-                        Private Chats / Channels
+                        Messenger
                       </span>
                   </div>
                  </Link>
