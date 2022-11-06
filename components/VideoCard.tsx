@@ -69,7 +69,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
               </div>
           </div>
        </div>
-          <div className="lg:ml-20 mr-2 ml-0 flex gap-2 relative mt-0">
+          <div className="lg:ml-20 mr-0 ml-0 flex gap-2 relative mt-0">
              <div 
                 onMouseEnter={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}
