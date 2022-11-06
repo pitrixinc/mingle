@@ -37,7 +37,7 @@ const Story = () => {
                        src={user.image}
                        width={35}
                        height={35}
-                       className="rounded-full md:rounded-[10px] sm:w-30 sm:h-30"
+                       className="rounded-full md:rounded-[10px] sm:w-35 sm:h-35"
                        alt="user profile"
                        layout="responsive"
                     />
@@ -46,7 +46,7 @@ const Story = () => {
                     
                   <div>
                     <p className="flex gap-1 items-center text-md font-semibold lowercase text-primary">
-                      {user.userName.replace(' ','_').substr(0, 5)}
+                      {user.userName.replace(' ','_').substr(0, 4)}
                       <GoVerified className="text-pink-400"/>
                     </p>
                    
