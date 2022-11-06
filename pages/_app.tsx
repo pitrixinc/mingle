@@ -43,9 +43,7 @@ if(isSSR) return null;
             </div>
              
 
-            <div>
-      <MiniNavbar />
-      </div>
+          
 
 
             <div className="h-[92vh] overflow-hidden xl:hover:overflow-auto">
@@ -61,6 +59,10 @@ if(isSSR) return null;
          
       </div>
       
+
+      <div>
+      <MiniNavbar />
+      </div>
   </GoogleOAuthProvider>
   );
 }
