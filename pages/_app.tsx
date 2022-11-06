@@ -42,15 +42,18 @@ if(isSSR) return null;
             <Component  {...pageProps}/>
             </div>
              
-                
+
+            <div>
+      <MiniNavbar />
+      </div>
+
+
             <div className="h-[92vh] overflow-hidden xl:hover:overflow-auto">
                  <Sidebar />
             </div>
         
   
-            <div>
-      <MiniNavbar />
-      </div>
+        
 
 
          </div>
