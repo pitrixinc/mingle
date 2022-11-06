@@ -46,7 +46,7 @@ const Search = ({ videos }: {videos: Video[] }) => {
                   <div className="block">
                     <p className="flex gap-1 items-center text-md font-bold text-primary">
                       {user.userName}
-                      <GoVerified className="text-blue-400"/>
+                      <GoVerified className="text-pink-400"/>
                     </p>
                     <p className=" text-gray-400 text-xs lowercase">
                      @{user.userName.replaceAll(' ','_')}
