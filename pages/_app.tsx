@@ -31,7 +31,7 @@ if(isSSR) return null;
       <MiniNavbar />
       </div>
 
-      <BottomCategory />
+     
       
       <div className="flex gap-0 md:gap-10">
       
