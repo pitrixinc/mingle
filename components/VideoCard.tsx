@@ -114,7 +114,9 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                     </video>
                     <div className="mt-2 px-3 flex justify-between items-center">
      
-                    <div className="mt-10 px-10">
+                    <div className=" pb-1">
+                    <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold  rounded">
+                    <p className="text-2xl"> 
            {userProfile && (
             <LikeButton
             likes={post.likes}
@@ -122,6 +124,8 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
              handleDislike={() => handleLike(false)}
             />
            )}
+           </p>
+           </div>
           </div>
 
               <div className=" pb-1">
