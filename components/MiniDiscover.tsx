@@ -10,10 +10,10 @@ const MiniDiscover = () => {
 
     const activeTopicStyle = "border-2 hover:bg-primary border-[#F51997] px-3 py-2 rounded rounded-full flex items-center gap-2 justify-center cursor-pointer text-[#F51997] "
 
-    const topicStyle ="p-4 border-2 hover:border-[#F51997] border-gray-300 px-3 py-2 rounded rounded-full flex items-center gap-2 justify-center cursor-pointer text-black hover:text-white hover:bg-[#F51997]"
+    const topicStyle ="p-1 border-2 hover:border-[#F51997] border-gray-300 px-3 py-2 rounded rounded-full flex items-center gap-2 justify-center cursor-pointer text-black hover:text-white hover:bg-[#F51997]"
 
   return (
-    <div className="border-b-2 border-gray-200 p-6 mb-0">
+    <div className="border-b-2 border-gray-200 p-1 mb-0">
       
       <div className="flex gap-2 flex-row">
         {topics.map((item) => (
