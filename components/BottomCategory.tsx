@@ -5,6 +5,7 @@ import { GoVerified } from 'react-icons/go';
 
 import useAuthStore from '../store/authStore';
 import { IUser } from '../types';
+import Discover from './Discover';
 
 
 interface IProps {
@@ -31,25 +32,7 @@ const BottomCategory = () => {
        
         
         <div className="flex overflow-x-auto space-x-1 snap-x">
-          {allUsers.slice(0, 20).map((user: IUser) => (
-            <Link href={`/profile/${user._id}`} key={user._id}>
-              <div className="gap-1 hover:bg-primary p-2 cursor-pointer font-semibold rounded">
-                  <div className="w-29 h-29 md:w-40 md:h-40">
-                    <Image
-                       src={user.image}
-                       width={35}
-                       height={35}
-                       className="rounded-full md:rounded-[10px] sm:w-35 sm:h-35"
-                       alt="user profile"
-                       layout="responsive"
-                    />
-                  </div>
-                  
-                    
-                  
-              </div>
-            </Link>
-          ))}
+          <Discover />
         </div>
         
 </section>
