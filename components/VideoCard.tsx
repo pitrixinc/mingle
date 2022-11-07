@@ -87,36 +87,26 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                     >
                      
                     </video>
-                    
-                    
-                    </div>
-                </Link>
-
-
-
-
-                <div className="mt-2 px-3 flex justify-between items-center">
+                    <div className="mt-2 px-3 flex justify-between items-center">
      
                     <div className=" pb-1">
-                    <Link href={`/detail/${post._id}`}>
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
                       <AiOutlineHeart />
                       </p>
                       
                   </div>
-                 </Link>
+                 
               </div> 
 
               <div className=" pb-1">
-              <Link href={`/detail/${post._id}`}>
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
                       <GoComment />
                       </p>
                       
                   </div>
-                 </Link>
+                 
               </div> 
  
               <div className=" pb-1">
@@ -129,14 +119,9 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                  
               </div>
           </div>
-
-
-
-
-
-
-
-
+                    
+                    </div>
+                </Link>
                 {isHover && (
                     <div className="absolute bottom-6 cursor-pointer left-8 md:left-14 lg:left-0 flex gap-40 lg:justify-between w-[100px] md:w-[50px] p-3">
                         {
