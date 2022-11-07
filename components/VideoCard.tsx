@@ -11,6 +11,13 @@ import { AiOutlineHeart } from 'react-icons/ai';
 import { GoComment } from 'react-icons/go';
 import { FiShare } from 'react-icons/fi';
 
+
+import useAuthStore from '../store/authStore';
+import LikeButton from './LikeButton';
+import  axios from 'axios';
+import { BASE_URL } from '../utils';
+
+
 interface IProps {
     post: Video;
 }
@@ -19,6 +26,24 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
     const [playing, setPlaying] = useState(false);
     const [isVideoMuted, setIsVideoMuted] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
+
+
+
+    
+    const { userProfile }: any = useAuthStore();
+    const handleLike = async (like: boolean) => {
+      if(userProfile) {
+        const { data } = await axios.put(`${BASE_URL}/api/like`, {
+          userId: userProfile._id,
+          postId: post._id,
+          like
+        })
+      }
+    }
+
+
+
+
 
    
     const onVideoPress = () => {
@@ -89,15 +114,15 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                     </video>
                     <div className="mt-2 px-3 flex justify-between items-center">
      
-                    <div className=" pb-1">
-                  <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
-                    <p className="text-2xl">
-                      <AiOutlineHeart />
-                      </p>
-                      
-                  </div>
-                 
-              </div> 
+                    <div className="mt-10 px-10">
+           {userProfile && (
+            <LikeButton
+            likes={post.likes}
+             handleLike={() => handleLike(true)}
+             handleDislike={() => handleLike(false)}
+            />
+           )}
+          </div>
 
               <div className=" pb-1">
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
