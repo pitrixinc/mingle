@@ -14,9 +14,7 @@ const MiniDiscover = () => {
 
   return (
     <div className="border-b-2 border-gray-200 pb-6">
-      <p className="text-gray-500 font-semibold m-3 mt-4 hidden xl:block">
-        Popular topics
-      </p>
+      
       <div className="flex gap-3 flex-row">
         {topics.map((item) => (
               <Link href={`/?topic=${item.name}`} key={item.name}>
