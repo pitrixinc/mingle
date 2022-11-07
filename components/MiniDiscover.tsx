@@ -29,7 +29,6 @@ const MiniDiscover = () => {
              </Link>
         ))}
       </div>
-    </div>
   )
 }
 
