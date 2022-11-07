@@ -14,17 +14,15 @@ const MiniDiscover = () => {
 
   return (
     <div className="xl:border-b-2 xl:border-gray-200 pb-6">
-      <p className="text-gray-500 font-semibold m-3 hidden sm:block">
-        Popular topics
-      </p>
+      
       <div className="flex gap-3 flex-wrap">
         {topics.map((item) => (
               <Link href={`/?topic=${item.name}`} key={item.name}>
                 <div className={topic === item.name ? activeTopicStyle : topicStyle}>
-                    <span className="font-bold text-2xl xl:text-md">
+                    <span className="font-bold text-gray-400 text-2xl xl:text-md">
                         {item.icon}
                     </span>
-                    <span className="font-medium text-md hidden xl:block capitalize">
+                    <span className="font-bold text-sm block capitalize">
                         {item.name}
                     </span>
                 </div>

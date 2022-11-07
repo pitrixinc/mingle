@@ -6,6 +6,7 @@ import { GoVerified } from 'react-icons/go';
 import useAuthStore from '../store/authStore';
 import { IUser } from '../types';
 import Discover from './Discover';
+import MiniDiscover from './MiniDiscover';
 
 
 interface IProps {
@@ -32,7 +33,7 @@ const BottomCategory = () => {
   <div className="md:hidden xl:hidden block  pb-4 flex mr-0">
         <div className="flex overflow-x-hidden space-x-1 snap-x">
         
-          <Discover />
+          <MiniDiscover />
           
         </div>
    </div>   
