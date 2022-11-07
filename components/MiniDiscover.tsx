@@ -13,9 +13,11 @@ const MiniDiscover = () => {
     const topicStyle ="xl:border-2 hover:border-[#F51997] xl:border-gray-300 px-3 py-2 rounded xl:rounded-full flex items-center gap-2 justify-center cursor-pointer text-black hover:text-white hover:bg-[#F51997]"
 
   return (
-    <div className="xl:border-b-2 xl:border-gray-200 pb-6">
-      
-      
+    <div className="border-b-2 border-gray-200 pb-6">
+      <p className="text-gray-500 font-semibold m-3 mt-4 hidden xl:block">
+        Popular topics
+      </p>
+      <div className="flex gap-3 flex-row">
         {topics.map((item) => (
               <Link href={`/?topic=${item.name}`} key={item.name}>
                 <div className={topic === item.name ? activeTopicStyle : topicStyle}>
@@ -29,6 +31,7 @@ const MiniDiscover = () => {
              </Link>
         ))}
       </div>
+    </div>
   )
 }
 
