@@ -8,12 +8,12 @@ const MiniDiscover = () => {
     const router = useRouter();
     const { topic } = router.query;
 
-    const activeTopicStyle = "xl:border-2 hover:bg-primary xl:border-[#F51997] px-3 py-2 rounded xl:rounded-full flex items-center gap-2 justify-center cursor-pointer text-[#F51997] "
+    const activeTopicStyle = "border-2 hover:bg-primary border-[#F51997] px-3 py-2 rounded rounded-full flex items-center gap-2 justify-center cursor-pointer text-[#F51997] "
 
-    const topicStyle ="xl:border-2 hover:border-[#F51997] xl:border-gray-300 px-3 py-2 rounded xl:rounded-full flex items-center gap-2 justify-center cursor-pointer text-black hover:text-white hover:bg-[#F51997]"
+    const topicStyle ="border-2 hover:border-[#F51997] border-gray-300 px-3 py-2 rounded rounded-full flex items-center gap-2 justify-center cursor-pointer text-black hover:text-white hover:bg-[#F51997]"
 
   return (
-    <div className="border-b-2 border-gray-200 pb-6">
+    <div className="border-b-2 border-gray-200 pb-6 mb-0">
       
       <div className="flex gap-3 flex-row">
         {topics.map((item) => (
