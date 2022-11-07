@@ -21,9 +21,7 @@ const BottomCategory = () => {
       fetchAllUsers();
    }, [fetchAllUsers]);
 
-   const users = allUsers
-   .sort(() => 0.5 - Math.random())
-   .slice(0, allUsers.length);
+
 
   return (
     
@@ -34,7 +32,7 @@ const BottomCategory = () => {
   <div className="md:hidden xl:hidden block  pb-4 flex mr-0">
         <div className="flex overflow-x-auto space-x-1 snap-x">
         
-          <Discover />
+          <p>write</p><p>goto scheduler</p><p>write</p><p>goto scheduler</p><p>write</p><p>goto scheduler</p><p>write</p><p>goto scheduler</p>
           
         </div>
    </div>   
