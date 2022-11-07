@@ -115,8 +115,8 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                     <div className="mt-2 px-3 flex justify-between items-center">
      
                     <div className=" pb-1">
-                    <div className="flex flex-row items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold  rounded">
-                    <p className="text-2xl"> 
+                    <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold  rounded">
+                    <p className="flex flex-row"> 
            {userProfile && (
             <LikeButton
             likes={post.likes}
