@@ -10,6 +10,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 
 import MiniNavbar from '../components/MiniNavbar';
 import Story from '../components/Story';
+import BottomCategory from '../components/BottomCategory';
 
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -29,6 +30,8 @@ if(isSSR) return null;
       <div>
       <MiniNavbar />
       </div>
+
+      <BottomCategory />
       
       <div className="flex gap-0 md:gap-10">
       
