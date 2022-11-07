@@ -15,7 +15,7 @@ const MiniDiscover = () => {
   return (
     <div className="xl:border-b-2 xl:border-gray-200 pb-6">
       
-      <div className="flex gap-3 flex-wrap">
+      
         {topics.map((item) => (
               <Link href={`/?topic=${item.name}`} key={item.name}>
                 <div className={topic === item.name ? activeTopicStyle : topicStyle}>
