@@ -30,9 +30,9 @@ const BottomCategory = () => {
 
        
   <div className="md:hidden xl:hidden block  pb-4 flex mr-0">
-        <div className="flex overflow-x-auto space-x-1 snap-x">
+        <div className="flex overflow-x-hidden space-x-1 snap-x">
         
-          <p>write</p><p>goto scheduler</p><p>write</p><p>goto scheduler</p><p>write</p><p>goto scheduler</p><p>write</p><p>goto scheduler</p>
+          <Discover />
           
         </div>
    </div>   
