@@ -27,7 +27,7 @@ const MiniSearch = () => {
   }
 
   return (
-    <div className="w-full flex h-[100%] justify-between lg:hidden md:hidden block mt-5 items-center border-b-2  border-gray-200 py-2 px-4">
+    <div className="w-full ">
         
 
         <div className="relative lg:hidden md:hidden block mb-5">
