@@ -17,7 +17,7 @@ import { AiFillHome, AiOutlineMenu } from 'react-icons/ai';
 import { GoHome } from 'react-icons/go';
 import { RiMessengerLine } from 'react-icons/ri';
 import Discover from './Discover';
-import MiniSearch from './MiniSearch';
+
 
 const MiniNavbar = () => {
   const { userProfile, addUser, removeUser } = useAuthStore();
@@ -61,7 +61,7 @@ const MiniNavbar = () => {
               </div>
 
           <div className="xl:border-b-2 border-gray-200 pb-1">
-                 <Link href="/MiniSearch">
+                 <Link href="/Minisearch">
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
                       <BiSearch />
