@@ -49,7 +49,7 @@ const MiniNavbar = () => {
     <div className="w-full flex justify-between items-center border-b-2 border-gray-200 py-1 px-1 xl:hidden md:hidden block shadow-sm mt-0">
         <div className='xl:border-b-2 border-gray-200 xl:pb-4 text-black'>
             <Link href='/'>
-              <div className={pathname === '/' ? activeLink : normalLink}>
+            <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                 <p className='text-2xl'>
                   <AiFillHome />
                 </p>
