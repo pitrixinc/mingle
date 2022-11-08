@@ -41,7 +41,7 @@ if(isSSR) return null;
           <div>
             <Story />
           </div>
-          <BottomCategory />
+          
 
             <Component  {...pageProps}/>
             </div>
