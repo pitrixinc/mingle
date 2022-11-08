@@ -11,6 +11,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import MiniNavbar from '../components/MiniNavbar';
 import Story from '../components/Story';
 import BottomCategory from '../components/BottomCategory';
+import TopCategory from '../components/TopCategory';
 
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -30,7 +31,7 @@ if(isSSR) return null;
       <div>
       <MiniNavbar />
       </div>
-      <BottomCategory />
+      
 
      
       
@@ -41,6 +42,7 @@ if(isSSR) return null;
             
           <div>
             <Story />
+            <TopCategory />
           </div>
           
 
