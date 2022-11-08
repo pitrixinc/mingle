@@ -27,11 +27,11 @@ const MiniSearch = () => {
   }
 
   return (
-    <div className="w-full h-full absolute left-0 top-0 bg-white flex justify-between items-center mt-2">
+    <div className="w-[100%] h-full absolute left-0 top-0 bg-white ">
         
 
 
-        
+        <div className=" flex justify-between items-center">
         <div className="xl:border-b-2 border-gray-200 pb-1">
                  <Link href="/">
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
@@ -69,7 +69,7 @@ const MiniSearch = () => {
           </form>
         </div>
 
-        
+        </div>
     </div>
   )
 }
