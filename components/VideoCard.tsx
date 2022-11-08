@@ -152,7 +152,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                     </div>
                 </Link>
                 {isHover && (
-                    <div className="absolute bottom-20 cursor-pointer left-8 md:left-14 lg:left-0 flex gap-40 lg:justify-between w-[100px] md:w-[50px] p-3">
+                    <div className="absolute bottom-25 cursor-pointer left-8 md:left-14 lg:left-0 flex gap-40 lg:justify-between w-[100px] md:w-[100%] p-3">
                         {
                             playing ? (
                                 <button onClick={onVideoPress}>
