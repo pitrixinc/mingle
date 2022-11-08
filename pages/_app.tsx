@@ -30,6 +30,7 @@ if(isSSR) return null;
       <div>
       <MiniNavbar />
       </div>
+      <BottomCategory />
 
      
       
