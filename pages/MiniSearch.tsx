@@ -27,10 +27,10 @@ const MiniSearch = () => {
   }
 
   return (
-    <div className="w-full absolute   flex-wrap        flex justify-between lg:hidden md:hidden block mt-1 items-center border-b-2  border-gray-200 py-2 px-4">
+    <div className="w-full absolute  h-[100%]   flex justify-between lg:hidden md:hidden block mt-1 items-center border-b-2  border-gray-200 py-2 px-4">
         
 
-        <div className="relative lg:hidden md:hidden block mb-5">
+        <div className="absolute lg:hidden md:hidden block mb-5">
           <form
             onSubmit={handleSearch}
             className="absolute md:static bg-white"
