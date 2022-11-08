@@ -26,7 +26,7 @@ const Comments = ({ comment, setComment, addComment, comments, isPostingComment 
   const { allUsers, userProfile }: any = useAuthStore();
 
   return (
-    <div className='border-t-2 border-gray-200 pt-4 px-10 mt-4 bg-[#F8F8F8] border-b-2 lg:pb-0 pb-[100px] sm:mb-40'>
+    <div className='border-t-2 border-gray-200 pt-4 px-10 mt-4 bg-[#F8F8F8] border-b-2 lg:pb-0 pb-[100px]'>
       <div className='overflow-scroll lg:h-[457px]'>
         {comments?.length > 0 ? (
           comments?.map((item: IComment, idx: number) => (
@@ -76,7 +76,7 @@ const Comments = ({ comment, setComment, addComment, comments, isPostingComment 
             className='bg-primary px-6 py-4 text-md font-medium border-2 w-[250px] md:w-[700px] lg:w-[350px] border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 flex-1 rounded-lg '
             placeholder='Add comment..'
           />
-          <button className='text-md text-gray-400 ' onClick={addComment}>
+          <button className='text-md text-gray-400 sm:mb-5' onClick={addComment}>
             {isPostingComment ? 'Commenting...' : 'Comment'}
           </button>
         </form>
