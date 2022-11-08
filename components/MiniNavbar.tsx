@@ -17,7 +17,7 @@ import { AiFillHome, AiOutlineMenu } from 'react-icons/ai';
 import { GoHome } from 'react-icons/go';
 import { RiMessengerLine } from 'react-icons/ri';
 import Discover from './Discover';
-
+import MiniSearch from './MiniSearch';
 
 const MiniNavbar = () => {
   const { userProfile, addUser, removeUser } = useAuthStore();
