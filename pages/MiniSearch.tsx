@@ -27,7 +27,7 @@ const MiniSearch = () => {
   }
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full absolute left-0 top-0 bg-white">
         
 
         <div className="relative lg:hidden md:hidden block mb-5">
