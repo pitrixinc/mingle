@@ -27,7 +27,7 @@ const MiniSearch = () => {
   }
 
   return (
-    <div className="w-full  h-[100%]   flex justify-between lg:hidden md:hidden block mt-1 items-center border-b-2  border-gray-200 py-2 px-4">
+    <div className="w-full flex justify-between lg:hidden md:hidden block mt-5 items-center border-b-2  border-gray-200 py-2 px-4">
         
 
         <div className="relative lg:hidden md:hidden block mb-5">
@@ -40,7 +40,7 @@ const MiniSearch = () => {
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
               placeholder="Search Accounts"
-              className="bg-white p-3 md:text-md font-medium border-2 border-gray-140 focus:outline-none focus:border-2 focus:border-gray-300 ml-5   rounded-full md:top-0"
+              className="bg-white p-3 md:text-md font-medium border-2 border-gray-140 focus:outline-none focus:border-2 focus:border-gray-300 ml-5  w-[250px]   rounded-full md:top-0"
             />
             <button
               onClick={handleSearch}
