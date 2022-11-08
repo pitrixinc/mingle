@@ -50,7 +50,7 @@ const Comments = ({ comment, setComment, addComment, comments, isPostingComment 
 
                           <p className='flex cursor-pointer gap-1 items-center text-[18px] font-bold leading-6 text-primary'>
                             {user.userName}{' '}
-                            <GoVerified className='text-[#F51997]-400' />
+                            <GoVerified className='text-pink-400' />
                           </p>
                         </div>
                       </Link>
@@ -73,10 +73,10 @@ const Comments = ({ comment, setComment, addComment, comments, isPostingComment 
           <input
             value={comment}
             onChange={(e) => setComment(e.target.value.trim())}
-            className='bg-primary px-6 py-4 text-md font-medium border-2 w-[250px] md:w-[700px] lg:w-[350px] border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 flex-1 rounded-lg'
+            className='bg-primary px-6 py-4 text-md font-medium border-2 w-[250px] md:w-[700px] lg:w-[350px] border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 flex-1 rounded-lg sm:mb-4'
             placeholder='Add comment..'
           />
-          <button className='text-md text-gray-400 ' onClick={addComment}>
+          <button className='text-md text-gray-400 sm:mb-4' onClick={addComment}>
             {isPostingComment ? 'Commenting...' : 'Comment'}
           </button>
         </form>
