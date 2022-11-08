@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Router, { useRouter } from 'next/router';
 import { GoogleLogin, googleLogout } from '@react-oauth/google';
 import { AiOutlineLogout } from 'react-icons/ai';
-import { BiSearch } from 'react-icons/bi';
+import { BiSearch, BiArrowBack } from 'react-icons/bi';
 import { IoMdAdd } from 'react-icons/io';
 
 import Logo from '../utils/tiktik-logo.png';
@@ -27,8 +27,26 @@ const MiniSearch = () => {
   }
 
   return (
-    <div className="w-full h-full absolute left-0 top-0 bg-white">
+    <div className="w-full h-full absolute left-0 top-0 bg-white flex justify-between items-center mt-2">
         
+
+
+        
+        <div className="xl:border-b-2 border-gray-200 pb-1">
+                 <Link href="/">
+                  <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
+                    <p className="text-2xl">
+                      <BiArrowBack />
+                      </p>
+                      
+                  </div>
+                 </Link>
+              </div>
+
+
+
+
+
 
         <div className="relative lg:hidden md:hidden block mb-5">
           <form
