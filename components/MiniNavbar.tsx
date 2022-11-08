@@ -61,7 +61,7 @@ const MiniNavbar = () => {
               </div>
 
           <div className="xl:border-b-2 border-gray-200 pb-1">
-                 <Link href="./MiniSearch">
+                 <Link href="/components/MiniSearch.tsx">
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
                       <BiSearch />
