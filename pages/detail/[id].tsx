@@ -76,7 +76,7 @@ const Detail = ({ postDetails }: IProps) => {
     if(!post) return null;
 
   return (
-    <div className="flex w-full absolute left-0 top-0 bg-white flex-wrap lg:flex-nowrap">
+    <div className="flex w-full absolute left-0 top-0 bg-white flex-wrap lg:flex-nowrap sm:height-[88vh] sm:mb-10">
         <div className="relative flex-2 w-[1000px] lg:w-9/12 flex justify-center items-center bg-blurred-img bg-no-repeat bg-cover bg-center">
           <div className="absolute top-6 left-2 lg:left-6 flex gap-6 z-50">
             <p className="cursor-pointer" onClick={() => router.back()}>
@@ -117,7 +117,7 @@ const Detail = ({ postDetails }: IProps) => {
              </div>
         </div>
 
-        <div className="relative w-[1000px] md:w-[900px] lg:w-[700px] sm:mb-10">
+        <div className="relative w-[1000px] md:w-[900px] lg:w-[700px]">
             <div className="lg:mt-20 mt-10">
             <div className="flex gap-3 p-2 cursor-pointer font-semibold rounded">
             <div className="ml-4 md:w-20 md:h-20 w-16 h-16">
