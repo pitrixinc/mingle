@@ -282,9 +282,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
         {isDownloading && (
         <>
           <progress max="100" value={downloadProgress} className="relative w-full h-3 bg-gray-200 rounded-full">
-           <span className="text-xs font-semibold inline-block text-white-600">
-          {downloadProgress}% completed
-          </span>
+          {downloadProgress}%
           </progress>
            <button className="text-2xl ml-2" onClick={handleCancelClick}>
               <ImCancelCircle />
