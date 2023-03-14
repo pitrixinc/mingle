@@ -164,9 +164,6 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
   };
 
 
-  // for share functionality
-  ///////////////////////////
-  
 
     return (
     <div className="flex flex-col border-b-2 border-gray-200 pb-6">
@@ -273,20 +270,19 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
               </div>
               
               <div className="pb-1">
-      <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
-        {!isDownloading && (
-          <button className="text-2xl" onClick={handleDownloadClick}>
-            <FiDownload />
-          </button>
-        )}
-        {isDownloading && (
-        <>
-          <progress max="100" value={downloadProgress} className="relative w-full h-3 bg-gray-200 rounded-full">
-          {downloadProgress}%
-          </progress>
-           <button className="text-2xl ml-2" onClick={handleCancelClick}>
-              <ImCancelCircle />
-            </button>
+                <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
+                  {!isDownloading && (
+                   
+                     <FiDownload className="text-2xl" onClick={handleDownloadClick} />
+                   
+                  )}
+                  {isDownloading && (
+                   <>
+                     <progress max="100" value={downloadProgress} className="relative w-full h-3 bg-gray-200 rounded-full">
+                       {downloadProgress}%
+                     </progress>
+              <ImCancelCircle className="text-2xl ml-2" onClick={handleCancelClick} />
+            
           </>
         )}
       </div>
