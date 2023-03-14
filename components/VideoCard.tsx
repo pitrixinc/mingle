@@ -95,6 +95,37 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
   const handleReadLessClick = () => {
     setIsExpanded(false);
   };
+  
+
+   // for the downloading functionality
+   ///////////////////////////////////
+   const [downloadProgress, setDownloadProgress] = useState<number>(0);
+
+  const handleDownloadClick = () => {
+    const downloadUrl = post.video.asset.url;
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", downloadUrl);
+    xhr.responseType = "blob";
+
+    xhr.addEventListener("progress", (event) => {
+      const { loaded, total } = event;
+      const progress = Math.round((loaded / total) * 100);
+      setDownloadProgress(progress);
+    });
+
+    xhr.addEventListener("load", () => {
+      const blob = new Blob([xhr.response]);
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "video.mp4";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+
+    xhr.send();
+  };
 
 
     return (
@@ -202,14 +233,17 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
               </div>
               
               <div className="pb-1">
-                  <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
-                    <a href={post.video.asset.url} download="">
-                      <button className="text-2xl">
-                        <FiDownload />
-                       </button>
-                    </a>
-              </div>
-             </div>
+      <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
+        <button className="text-2xl" onClick={handleDownloadClick}>
+          <FiDownload />
+        </button>
+        {downloadProgress > 0 && (
+          <progress max="100" value={downloadProgress}>
+            {downloadProgress}%
+          </progress>
+        )}
+      </div>
+    </div>
               
           </div>
                     
