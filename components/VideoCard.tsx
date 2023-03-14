@@ -100,8 +100,12 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
    // for the downloading functionality
    ///////////////////////////////////
    const [downloadProgress, setDownloadProgress] = useState<number>(0);
+  const [isDownloading, setIsDownloading] = useState<boolean>(false);
+  const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>(false);
+  const [showErrorMsg, setShowErrorMsg] = useState<boolean>(false);
 
   const handleDownloadClick = () => {
+    setIsDownloading(true);
     const downloadUrl = post.video.asset.url;
     const xhr = new XMLHttpRequest();
     xhr.open("GET", downloadUrl);
@@ -122,10 +126,24 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+      setIsDownloading(false);
+      setShowSuccessMsg(true);
+      setTimeout(() => {
+        setShowSuccessMsg(false);
+      }, 3000);
+    });
+
+    xhr.addEventListener("error", () => {
+      setIsDownloading(false);
+      setShowErrorMsg(true);
+      setTimeout(() => {
+        setShowErrorMsg(false);
+      }, 3000);
     });
 
     xhr.send();
   };
+
 
 
     return (
@@ -234,17 +252,27 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
               
               <div className="pb-1">
       <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
-        <button className="text-2xl" onClick={handleDownloadClick}>
-          <FiDownload />
-        </button>
-        {downloadProgress > 0 && (
-          <progress max="100" value={downloadProgress}>
-            {downloadProgress}%
+        {!isDownloading && (
+          <button className="text-2xl" onClick={handleDownloadClick}>
+            <FiDownload />
+          </button>
+        )}
+        {isDownloading && (
+          <progress max="100" value={downloadProgress} className="relative w-full h-3 bg-gray-200 rounded-full text-xs font-semibold inline-block text-pink-600">
+           <span className="text-xs font-semibold inline-block text-white-600">
+          {downloadProgress}% completed
+          </span>
           </progress>
         )}
       </div>
+      
     </div>
-              
+          {showSuccessMsg && (
+        <p className="text-green-500">Download completed successfully!</p>
+      )}
+      {showErrorMsg && (
+        <p className="text-red-500">An error occurred, please try again!</p>
+      )}    
           </div>
                     
                     
