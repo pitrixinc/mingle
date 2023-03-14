@@ -10,6 +10,7 @@ import { Video } from '../types';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { GoComment } from 'react-icons/go';
 import { FiShare } from 'react-icons/fi';
+import {FiDownload} from 'react-icons/fi';
 
 
 import useAuthStore from '../store/authStore';
@@ -25,6 +26,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
     const [isHover, setIsHover] = useState(false);
     const [playing, setPlaying] = useState(false);
     const [isVideoMuted, setIsVideoMuted] = useState(false);
+    const [post, setPost] = useState(post);
     const videoRef = useRef<HTMLVideoElement>(null);
 
 
@@ -34,14 +36,16 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
     
     const { userProfile }: any = useAuthStore();
     const handleLike = async (like: boolean) => {
-      if(userProfile) {
-        const { data } = await axios.put(`${BASE_URL}/api/like`, {
-          userId: userProfile._id,
-          postId: post._id,
-          like
-        })
-      }
-    }
+          if(userProfile) {
+            const { data } = await axios.put(`${BASE_URL}/api/like`, {
+              userId: userProfile._id,
+              postId: post._id,
+              like
+            })
+
+           setPost({ ...post, likes: data.likes });
+          }
+        }
 
 
 
@@ -159,6 +163,8 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                     >
                      
                     </video>
+                    </div>
+                </Link>
                     <div className="mt-2 px-3 flex justify-between items-center">
      
                     <div className=" pb-1">
@@ -194,10 +200,20 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                   </div>
                  
               </div>
+              
+              <div className="pb-1">
+                  <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
+                    <a href={post.videoUrl} download>
+                      <button className="text-2xl">
+                        <FiDownload />
+                       </button>
+                    </a>
+              </div>
+             </div>
+              
           </div>
                     
-                    </div>
-                </Link>
+                    
                 {isHover && (
                     <div className="absolute bottom-20 cursor-pointer left-8 md:left-14 lg:left-0 flex gap-40 lg:justify-between w-[90%] md:w-[90%] p-3">
                         {
