@@ -28,6 +28,8 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
     const videoRef = useRef<HTMLVideoElement>(null);
 
 
+    
+
 
     
     const { userProfile }: any = useAuthStore();
@@ -65,7 +67,31 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
       videoRef.current.muted = isVideoMuted;
    }
    }, [isVideoMuted])
-     
+
+// read more & read less functionality
+////////////////////////////////////
+     const [isExpanded, setIsExpanded] = useState(false);
+  
+  // Count the number of words in the caption
+  const captionWords = post.caption.split(' ');
+  const captionWordCount = captionWords.length;
+
+  // Check if the number of words in the caption is greater than 15
+  const shouldShowReadMore = captionWordCount > 15;
+
+  // Slice the caption to display only the first 15 words
+  const captionPreview = captionWords.slice(0, 15).join(' ');
+
+  // Handle the "Read More" click event
+  const handleReadMoreClick = () => {
+    setIsExpanded(true);
+  };
+
+  // Handle the "Read Less" click event
+  const handleReadLessClick = () => {
+    setIsExpanded(false);
+  };
+
 
     return (
     <div className="flex flex-col border-b-2 border-gray-200 pb-6">
@@ -100,10 +126,31 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                 onMouseEnter={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}
                 className="rounded-3xl mr-0">
+                {/* Display the first 15 words of the caption */}
+      <p className="px-1 ml-0 mb-2 mt-2 mr-0 md:text-md text-md text-primary text-justify justify-center">
+        {isExpanded ? post.caption : `${captionPreview} ... `}
+        {/* Display the "Read More" link if necessary */}
+        {shouldShowReadMore &&
+          <button 
+             className="text-blue-500 hover:underline ml-2"
+             onClick={handleReadMoreClick}>
+            {isExpanded ? '' : 'Read More'}
+          </button>
+        }
+      </p>
+      
+      {/* Display the "Read Less" link if necessary */}
+      {isExpanded && shouldShowReadMore &&
+        <button 
+          className="text-blue-500 hover:underline ml-2"
+          onClick={handleReadLessClick}>
+          Read Less
+        </button>
+      }
                 <Link href={`/detail/${post._id}`}>
                 
                   <div>
-                  <p className="px-1 ml-0 mb-2 mt-2 mr-0 md:text-md text-md text-primary text-justify justify-center">{post.caption}</p>
+                      
                     <video
                        loop
                        ref={videoRef}
