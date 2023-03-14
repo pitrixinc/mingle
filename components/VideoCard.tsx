@@ -12,6 +12,13 @@ import { GoComment } from 'react-icons/go';
 import { FiShare } from 'react-icons/fi';
 import {FiDownload} from 'react-icons/fi';
 import {ImCancelCircle} from 'react-icons/im';
+import {BsFacebook} from 'react-icons/bs';
+import {BsTwitter} from 'react-icons/bs';
+import {BsWhatsapp} from 'react-icons/bs';
+import {BsTiktok} from 'react-icons/bs';
+import {BsInstagram} from 'react-icons/bs';
+
+
 
 import useAuthStore from '../store/authStore';
 import LikeButton from './LikeButton';
@@ -157,6 +164,9 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
   };
 
 
+  // for share functionality
+  ///////////////////////////
+  
 
     return (
     <div className="flex flex-col border-b-2 border-gray-200 pb-6">
@@ -271,11 +281,13 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
         )}
         {isDownloading && (
         <>
-          <progress max="100" value={downloadProgress} className="relative w-full h-3 bg-gray-200 rounded-full">
-           <span className="text-xs font-semibold inline-block text-white-600">
+        <div className="relative w-full h-10 sm:h-3 bg-gray-200 rounded-full">
+          <progress max="100" value={downloadProgress} className="absulute top-0 left-0 w-full h-full rounded-full">
+           <span className="text-xs sm:text-sm font-semibold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
           {downloadProgress}% completed
           </span>
           </progress>
+          </div>
            <button className="text-2xl ml-2" onClick={handleCancelClick}>
               <ImCancelCircle />
             </button>
