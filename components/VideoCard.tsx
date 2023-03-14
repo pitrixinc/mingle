@@ -26,7 +26,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
     const [isHover, setIsHover] = useState(false);
     const [playing, setPlaying] = useState(false);
     const [isVideoMuted, setIsVideoMuted] = useState(false);
-    const [post, setPost] = useState(post);
+    const [post1, setPost1] = useState(post);
     const videoRef = useRef<HTMLVideoElement>(null);
 
 
@@ -43,7 +43,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
               like
             })
 
-           setPost({ ...post, likes: data.likes });
+           setPost1({ ...post1, likes: data.likes });
           }
         }
 
@@ -172,7 +172,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                     <p className="flex flex-row"> 
            {userProfile && (
             <LikeButton
-            likes={post.likes}
+            likes={post1.likes}
              handleLike={() => handleLike(true)}
              handleDislike={() => handleLike(false)}
             />
@@ -203,7 +203,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
               
               <div className="pb-1">
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
-                    <a href={post.videoUrl} download="">
+                    <a href={post.video.asset.url} download>
                       <button className="text-2xl">
                         <FiDownload />
                        </button>
