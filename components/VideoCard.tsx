@@ -11,7 +11,7 @@ import { AiOutlineHeart } from 'react-icons/ai';
 import { GoComment } from 'react-icons/go';
 import { FiShare } from 'react-icons/fi';
 import {FiDownload} from 'react-icons/fi';
-
+import {ImCancelCircle} from 'react-icons/im';
 
 import useAuthStore from '../store/authStore';
 import LikeButton from './LikeButton';
@@ -103,22 +103,23 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
   const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>(false);
   const [showErrorMsg, setShowErrorMsg] = useState<boolean>(false);
+   const [xhr, setXhr] = useState<XMLHttpRequest | null>(null);
 
   const handleDownloadClick = () => {
     setIsDownloading(true);
     const downloadUrl = post.video.asset.url;
-    const xhr = new XMLHttpRequest();
-    xhr.open("GET", downloadUrl);
-    xhr.responseType = "blob";
+    const newXHR = new XMLHttpRequest();
+    newXHR.open("GET", downloadUrl);
+    newXHR.responseType = "blob";
 
-    xhr.addEventListener("progress", (event) => {
+    newXHR.addEventListener("progress", (event) => {
       const { loaded, total } = event;
       const progress = Math.round((loaded / total) * 100);
       setDownloadProgress(progress);
     });
 
-    xhr.addEventListener("load", () => {
-      const blob = new Blob([xhr.response]);
+    newXHR.addEventListener("load", () => {
+      const blob = new Blob([newXHR.response]);
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
@@ -127,21 +128,32 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
       link.click();
       document.body.removeChild(link);
       setIsDownloading(false);
+      setDownloadProgress(0);
       setShowSuccessMsg(true);
       setTimeout(() => {
         setShowSuccessMsg(false);
       }, 3000);
     });
 
-    xhr.addEventListener("error", () => {
+    newXHR.addEventListener("error", () => {
       setIsDownloading(false);
+      setDownloadProgress(0);
       setShowErrorMsg(true);
       setTimeout(() => {
         setShowErrorMsg(false);
       }, 3000);
     });
 
-    xhr.send();
+    setXhr(newXHR);
+    newXHR.send();
+  };
+
+  const handleCancelClick = () => {
+    if (xhr) {
+      xhr.abort();
+      setIsDownloading(false);
+      setDownloadProgress(0);
+    }
   };
 
 
@@ -258,20 +270,25 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
           </button>
         )}
         {isDownloading && (
-          <progress max="100" value={downloadProgress} className="relative w-full h-3 bg-gray-200 rounded-full text-xs font-semibold inline-block text-pink-600">
+        <>
+          <progress max="100" value={downloadProgress} className="relative w-full h-3 bg-gray-200 rounded-full">
            <span className="text-xs font-semibold inline-block text-white-600">
           {downloadProgress}% completed
           </span>
           </progress>
+           <button className="text-2xl ml-2" onClick={handleCancelClick}>
+              <ImCancelCircle />
+            </button>
+          </>
         )}
       </div>
       
     </div>
           {showSuccessMsg && (
-        <p className="text-green-500">Download completed successfully!</p>
+        <p className="text-green-500">Download completed!</p>
       )}
       {showErrorMsg && (
-        <p className="text-red-500">An error occurred, please try again!</p>
+        <p className="text-red-500">Couldn't download, try again!</p>
       )}    
           </div>
                     
