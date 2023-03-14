@@ -203,7 +203,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
               
               <div className="pb-1">
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
-                    <a href={post.videoUrl} download>
+                    <a href={post.videoUrl} download="">
                       <button className="text-2xl">
                         <FiDownload />
                        </button>
