@@ -44,12 +44,25 @@ const VideoCard: NextPage<IProps> = ({post}: IProps) => {
             setPlaying(true);
         }
     }
+    
+    const { userProfile }: any = useAuthStore();
 
  useEffect(() => {
    if(videoRef?.current) {
       videoRef.current.muted = isVideoMuted;
    }
    }, [isVideoMuted])
+   
+   
+    const handleLike = async (like: boolean) => {
+          if(userProfile) {
+            const { data } = await axios.put(`${BASE_URL}/api/like`, {
+              userId: userProfile._id,
+              postId: post._id,
+              like
+            })
+          }
+    }
 
 // read more & read less functionality
 ////////////////////////////////////
@@ -207,6 +220,19 @@ const VideoCard: NextPage<IProps> = ({post}: IProps) => {
                 </Link>
                     <div className="mt-2 px-3 flex justify-between items-center">
      
+              <div className=" pb-1">
+                    <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold  rounded">
+                    <p className="flex flex-row"> 
+           {userProfile && (
+            <LikeButton
+            likes={post.likes}
+             handleLike={() => handleLike(true)}
+             handleDislike={() => handleLike(false)}
+            />
+           )}
+           </p>
+           </div>
+          </div>
                     
 
               <div className=" pb-1">
