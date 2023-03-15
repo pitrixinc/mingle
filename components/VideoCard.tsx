@@ -252,7 +252,7 @@ const VideoCard: NextPage<IProps> = ({post}: IProps) => {
         <p className="text-green-500">Download completed!</p>
       )}
       {showErrorMsg && (
-        <p className="text-red-500">Couldn't download, try again!</p>
+        <p className="text-red-500">Couldnt download</p>
       )}    
           </div>
                     
