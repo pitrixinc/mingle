@@ -12,12 +12,6 @@ import { GoComment } from 'react-icons/go';
 import { FiShare } from 'react-icons/fi';
 import {FiDownload} from 'react-icons/fi';
 import {ImCancelCircle} from 'react-icons/im';
-import {BsFacebook} from 'react-icons/bs';
-import {BsTwitter} from 'react-icons/bs';
-import {BsWhatsapp} from 'react-icons/bs';
-import {BsTiktok} from 'react-icons/bs';
-import {BsInstagram} from 'react-icons/bs';
-
 
 
 import useAuthStore from '../store/authStore';
@@ -29,24 +23,12 @@ import { BASE_URL } from '../utils';
 interface IProps {
     post: Video;
 }
-const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
+const VideoCard: NextPage<IProps> = ({post}: IProps) => {
     const [isHover, setIsHover] = useState(false);
     const [playing, setPlaying] = useState(false);
     const [isVideoMuted, setIsVideoMuted] = useState(false);
     
     const videoRef = useRef<HTMLVideoElement>(null);
-
-
-    
-
-
-    
-    
-    
-
-
-
-
 
    
     const onVideoPress = () => {
@@ -177,7 +159,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
               <Link href={`/profile/${post.postedBy._id}`}>
                 <div className="flex items-center gap-2 mb-0">
                     <p className="flex gap-2 items-center md:text-md font-bold text-primary">{post.postedBy.userName}  {' '} <GoVerified className="text-pink-400 text-md"/></p>
-                    <p className="font-medium text-xs text-gray-500 hidden md:block lowercase">@{post.postedBy.userName.replace(' ','_')}</p>
+                    <p className="font-medium text-xs text-gray-500 hidden md:block lowercase">{"@" + post.postedBy.userName.replace(" ","_")}</p>
                 </div>
               </Link>
               </div>
