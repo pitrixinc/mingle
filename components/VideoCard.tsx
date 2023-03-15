@@ -33,7 +33,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
     const [isHover, setIsHover] = useState(false);
     const [playing, setPlaying] = useState(false);
     const [isVideoMuted, setIsVideoMuted] = useState(false);
-    const [post1, setPost1] = useState(post);
+    
     const videoRef = useRef<HTMLVideoElement>(null);
 
 
@@ -49,8 +49,6 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
               postId: post._id,
               like
             })
-
-           setPost1({ ...post1, likes: data.likes });
           }
         }
 
@@ -240,7 +238,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                     <p className="flex flex-row"> 
            {userProfile && (
             <LikeButton
-            likes={post1.likes}
+            likes={post.likes}
              handleLike={() => handleLike(true)}
              handleDislike={() => handleLike(false)}
             />
