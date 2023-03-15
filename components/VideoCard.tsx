@@ -43,14 +43,15 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
     
     const { userProfile }: any = useAuthStore();
     const handleLike = async (like: boolean) => {
-          if(userProfile) {
-            const { data } = await axios.put(`${BASE_URL}/api/like`, {
-              userId: userProfile._id,
-              postId: post._id,
-              like
-            })
-          }
-        }
+      if(userProfile) {
+        const { data } = await axios.put(`${BASE_URL}/api/like`, {
+          userId: userProfile._id,
+          postId: post._id,
+          like
+        })
+      }
+    }
+    
 
 
 
