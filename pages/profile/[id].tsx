@@ -37,6 +37,8 @@ const Profile = ({data}: IProps) => {
         setVideosList(userLikedVideos);
        }
      }, [showUserVideos, userLikedVideos, userVideos]);
+     
+     const totalLikes = userVideos.reduce((sum, video) => sum + video.likes.length, 0);
     
     return (
         
@@ -60,6 +62,23 @@ const Profile = ({data}: IProps) => {
                     <p className=" text-gray-400 text-xs md:text-xl lowercase">
                      @{user.userName.replaceAll(' ','_')}
                     </p>
+                    
+                    <div className="flex justify-between text-gray-400 text-xs md:text-xl lowercase">
+  <p className="mr-2">Total Videos:</p>
+  <div className="flex items-center">
+    <p className="mr-1 font-bold">{userVideos.length}</p>
+    <p className="text-gray-600">videos</p>
+  </div>
+</div>
+<div className="flex justify-between text-gray-400 text-xs md:text-xl lowercase">
+  <p className="mr-2">Total Likes:</p>
+  <div className="flex items-center">
+    <p className="mr-1 font-bold">{totalLikes}</p>
+    <p className="text-gray-600">likes</p>
+  </div>
+</div>
+
+                    
         
                   </div>
                     
