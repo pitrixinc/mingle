@@ -42,7 +42,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
 
     
     const { userProfile }: any = useAuthStore();
-    const handleLike = async (like: boolean) => {
+        {/*const handleLike = async (like: boolean) => {
       if(userProfile) {
         const { data } = await axios.put(`${BASE_URL}/api/like`, {
           userId: userProfile._id,
@@ -50,7 +50,7 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
           like
         })
       }
-    }
+        } */}
     
 
 
@@ -237,13 +237,13 @@ const VideoCard: NextPage<IProps> = ({ post}: IProps) => {
                     <div className=" pb-1">
                     <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold  rounded">
                     <p className="flex flex-row"> 
-           {userProfile && (
+                    {/* {userProfile && (
             <LikeButton
             likes={post.likes}
              handleLike={() => handleLike(true)}
              handleDislike={() => handleLike(false)}
             />
-           )}
+                    )} */}
            </p>
            </div>
           </div>
