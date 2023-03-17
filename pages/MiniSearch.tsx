@@ -27,51 +27,30 @@ const MiniSearch = () => {
   }
 
   return (
-    <div className="w-[100%] h-full absolute left-0 top-0 bg-white hidden sm:block">
-        
-
-
-        
-        <div className="xl:border-b-2 border-gray-200 pb-1">
-                 <Link href="/">
-                  <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
-                    <p className="text-2xl">
-                      <BiArrowBack />
-                      </p>
-                      
-                  </div>
-                 </Link>
-              </div>
-
-
-
-
-
-
-        <div className="relative lg:hidden md:hidden block mb-5">
-          <form
-            onSubmit={handleSearch}
-            className="absolute md:static bg-white"
+    <div className="w-[100%] h-full bg-transparent  justify-center items-center">
+      
+      <div className="relative lg:hidden md:hidden block mb-5">
+        <form
+          onSubmit={handleSearch}
+          className="absolute md:static bg-white flex items-center"
+        >
+          <input 
+            type="text"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            placeholder="Search Accounts"
+            className="bg-white p-3 md:text-md font-medium border-2 border-gray-140 focus:outline-none focus:border-2 focus:border-gray-300 ml-5  w-[250px]   rounded-full md:top-0"
+          />
+          <button
+            onClick={handleSearch}
+            className="absolute md:right-5 right-6 top-4 border-l-2 border-gray-300 pl-4 text-2xl text-gray-400"
           >
-            <input 
-              type="text"
-              value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
-              placeholder="Search Accounts"
-              className="bg-white p-3 md:text-md font-medium border-2 border-gray-140 focus:outline-none focus:border-2 focus:border-gray-300 ml-5  w-[250px]   rounded-full md:top-0"
-            />
-            <button
-              onClick={handleSearch}
-              className="absolute md:right-5 right-6 top-4 border-l-2 border-gray-300 pl-4 text-2xl text-gray-400"
-            >
-              <BiSearch/>
-            </button>
-          </form>
-        </div>
-
-        </div>
-    
+            <BiSearch/>
+          </button>
+        </form>
+      </div>
+    </div>
   )
 }
 
-export default MiniSearch
+export default MiniSearch;
