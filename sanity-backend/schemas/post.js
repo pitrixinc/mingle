@@ -48,5 +48,17 @@ export default {
       title: 'Topic',
       type: 'string',
     },
+    {
+      name: 'hashtags',
+      title: 'Hashtags',
+      type: 'array',
+      of: [{ type: 'string' }],
+    },
+    {
+      name: 'createdAt',
+      title: 'Created At',
+      type: 'datetime',
+      default: () => new Date().toISOString(),
+    },
   ],
 };

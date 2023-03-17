@@ -69,7 +69,8 @@ const VideoCard: NextPage<IProps> = ({post}: IProps) => {
      const [isExpanded, setIsExpanded] = useState(false);
   
   // Count the number of words in the caption
-  const captionWords = post.caption.split(' ');
+  const captionWords = typeof post.caption === 'string' ? post.caption.split(' ') : [];
+
   const captionWordCount = captionWords.length;
 
   // Check if the number of words in the caption is greater than 15
@@ -173,7 +174,7 @@ const VideoCard: NextPage<IProps> = ({post}: IProps) => {
                 <div className="flex items-center gap-2 mb-0">
                     <p className="flex gap-2 items-center md:text-md font-bold text-primary">{post.postedBy.userName}  {' '} <GoVerified className="text-pink-400 text-md"/></p>
                     <p className="font-medium text-xs text-gray-500 hidden md:block lowercase">{"@" + post.postedBy.userName.replace(" ","_")}</p> 
-                    
+                    <p className="font-medium text-xs text-gray-500 hidden md:block lowercase">{new Date (post.createdAt).toDateString()}</p>
                 </div>
               </Link>
               </div>

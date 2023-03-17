@@ -49,40 +49,61 @@ const Upload = () => {
     }
   };
 
+const [hashtags, setHashtags] = useState([]);
   const handlePost = async () => {
-    if (caption && videoAsset?._id && topic) {
-      setSavingPost(true);
+  if (caption && videoAsset?._id && topic) {
+    setSavingPost(true);
 
-      const doc = {
-        _type: 'post',
-        caption,
-        video: {
-          _type: 'file',
-          asset: {
-            _type: 'reference',
-            _ref: videoAsset?._id,
-          },
-        },
-        userId: userProfile?._id,
-        postedBy: {
-          _type: 'postedBy',
-          _ref: userProfile?._id,
-        },
-        topic,
-      };
-
-      await axios.post(`${BASE_URL}/api/post`, doc);
-        
-      router.push('/');
+    // Extract hashtags from caption
+    const hashtagRegex = /(?:^|\s)(?:#)([a-zA-Z\d]+)/gm;
+    const hashtags = [];
+    let match;
+    while ((match = hashtagRegex.exec(caption))) {
+      hashtags.push(match[1]);
     }
-  };
 
-  const handleDiscard = () => {
-    setSavingPost(false);
-    setVideoAsset(undefined);
-    setCaption('');
-    setTopic('');
-  };
+    setHashtags(hashtags);
+
+    const doc = {
+      _type: 'post',
+      caption: hashtags.length > 0
+    ? caption.replace(hashtagRegex, '#$1')
+    : caption,
+      video: {
+        _type: 'file',
+        asset: {
+          _type: 'reference',
+          _ref: videoAsset?._id,
+        },
+      },
+      userId: userProfile?._id,
+      postedBy: {
+        _type: 'postedBy',
+        _ref: userProfile?._id,
+      },
+      topic,
+      hashtags, // include hashtags in the document
+    };
+
+    await axios.post(`${BASE_URL}/api/post`, doc);
+
+    router.push('/');
+  }
+};
+
+const handleDiscard = () => {
+  setSavingPost(false);
+  setVideoAsset(undefined);
+  setCaption('');
+  setTopic('');
+  setHashtags([]);
+};
+
+const handleKeyPress = (event) => {
+  if (event.key === '#') {
+    // Show list of hashtags
+  }
+};
 
   return (
     <div className='flex w-full h-full absolute left-0 top-[60px] lg:top-[70px] mb-10 pt-10 lg:pt-20 bg-[#F8F8F8] justify-center'>
@@ -158,13 +179,23 @@ const Upload = () => {
           )}
         </div>
         <div className='flex flex-col gap-3 pb-10'>
-          <label className='text-md font-semibold '>Caption</label>
-          <input
-            type='text'
-            value={caption}
-            onChange={(e) => setCaption(e.target.value)}
-            className='rounded lg:after:w-650 outline-none text-md border-2 border-gray-200 p-2'
-          />
+          
+      <label className='text-md font-semibold'>Caption</label>
+<input
+  type='text'
+  value={caption}
+  onChange={(e) => setCaption(e.target.value)}
+  onKeyPress={handleKeyPress}
+  className='rounded lg:after:w-650 outline-none text-md border-2 border-gray-200 p-2'
+/>
+
+{hashtags.length > 0 && (
+  <ul>
+    {hashtags.map((tag) => (
+      <li key={tag}>#{tag}</li>
+    ))}
+  </ul>
+)}
           <label className='text-md font-semibold '>Choose a topic</label>
 
           <select
