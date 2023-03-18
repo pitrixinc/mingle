@@ -28,9 +28,9 @@ if(isSSR) return null;
       <div className="xl:w-[1100px] md:w-[1000px] sm:w-[1000px] md:m-auto xl:m-auto m-0 overflow-hidden h-[100vh]">
       <Navbar />
 
-      <div>
-      <MiniNavbar />
-      </div>
+      <div className="fixed bottom-0 w-full">
+            <MiniNavbar />
+          </div>
       
 
      
