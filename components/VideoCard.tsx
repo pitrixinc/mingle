@@ -149,7 +149,7 @@ const VideoCard: NextPage<IProps> = ({post}: IProps) => {
     }
   };
 
-const createdAt = new Date(post.createdAt).toLocaleDateString();
+const createdTime = new Date(post.createdAt).toLocaleDateString();
 
  const formattedDate = moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a');
 
@@ -178,7 +178,7 @@ const createdAt = new Date(post.createdAt).toLocaleDateString();
                     <p className="flex gap-2 items-center md:text-md font-bold text-primary">{post.postedBy.userName} {' '}
     {post.postedBy.isVerified && <GoVerified className="text-blue-400" />}</p>
                     <p className="font-medium text-xs text-gray-500 hidden md:block lowercase">{"@" + post.postedBy.userName.replace(" ","_")}</p> 
-                    <p className="font-medium text-xs text-gray-500 hidden md:block lowercase">{formattedDate}</p>
+                    
                 </div>
               </Link>
               </div>

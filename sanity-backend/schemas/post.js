@@ -58,7 +58,7 @@ export default {
       name: 'createdAt',
       title: 'Created At',
       type: 'datetime',
-      default: () => new Date().toLocaleString(),
+      default: () => new Date().toDateString(),
     },
   ],
 };

@@ -28,7 +28,8 @@ export const getServerSideProps = async ({
 }: {
    query: { topic: string }
 }) => {
-  let response = null;
+  try {
+    let response = null;
 
     if(topic) {
       response = await axios.get(`${BASE_URL}/api/discover/${topic}`);
@@ -41,6 +42,15 @@ export const getServerSideProps = async ({
         videos: response.data
       }
     }
+  } catch (error) {
+    console.error(error);
+    return {
+      props: {
+        videos: []
+      }
+    }
+  }
 }
+
 
 export default Home
