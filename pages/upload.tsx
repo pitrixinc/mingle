@@ -83,6 +83,7 @@ const [hashtags, setHashtags] = useState([]);
       },
       topic,
       hashtags, // include hashtags in the document
+      createdAt: new Date().toISOString() // add createdAt property with current date and time
     };
 
     await axios.post(`${BASE_URL}/api/post`, doc);

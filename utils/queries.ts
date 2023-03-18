@@ -1,28 +1,30 @@
 export const allPostsQuery = () => {
   const query = `*[_type == "post"] | order(_createdAt desc){
     _id,
-     caption,
-       video{
-        asset->{
-          _id,
-          url
-        }
-      },
-      userId,
-      postedBy->{
+    caption,
+    video{
+      asset->{
         _id,
-        userName,
-        image
-      },
+        url
+      }
+    },
+    userId,
+    postedBy->{
+      _id,
+      userName,
+      image,
+      isVerified
+    },
     likes,
     comments[]{
       comment,
       _key,
       postedBy->{
-      _id,
-      userName,
-      image
-    },
+        _id,
+        userName,
+        image,
+        isVerified
+      },
     }
   }`;
 
@@ -32,27 +34,29 @@ export const allPostsQuery = () => {
 export const postDetailQuery = (postId: string | string[]) => {
   const query = `*[_type == "post" && _id == '${postId}']{
     _id,
-     caption,
-       video{
-        asset->{
-          _id,
-          url
-        }
-      },
-      userId,
+    caption,
+    video{
+      asset->{
+        _id,
+        url
+      }
+    },
+    userId,
     postedBy->{
       _id,
       userName,
-      image
+      image,
+      isVerified
     },
-     likes,
+    likes,
     comments[]{
       comment,
       _key,
       postedBy->{
         _ref,
-      _id,
-    },
+        _id,
+        isVerified
+      },
     }
   }`;
   return query;
@@ -61,28 +65,30 @@ export const postDetailQuery = (postId: string | string[]) => {
 export const searchPostsQuery = (searchTerm: string | string[]) => {
   const query = `*[_type == "post" && caption match '${searchTerm}*' || topic match '${searchTerm}*'] {
     _id,
-     caption,
-       video{
-        asset->{
-          _id,
-          url
-        }
-      },
-      userId,
+    caption,
+    video{
+      asset->{
+        _id,
+        url
+      }
+    },
+    userId,
     postedBy->{
       _id,
       userName,
-      image
+      image,
+      isVerified
     },
-likes,
+    likes,
     comments[]{
       comment,
       _key,
       postedBy->{
-      _id,
-      userName,
-      image
-    },
+        _id,
+        userName,
+        image,
+        isVerified
+      },
     }
   }`;
   return query;
@@ -103,29 +109,30 @@ export const allUsersQuery = () => {
 export const userCreatedPostsQuery = (userId: string | string[]) => {
   const query = `*[ _type == 'post' && userId == '${userId}'] | order(_createdAt desc){
     _id,
-     caption,
-       video{
-        asset->{
-          _id,
-          url
-        }
-      },
-      userId,
+    caption,
+    video{
+      asset->{
+        _id,
+        url
+      }
+    },
+    userId,
     postedBy->{
       _id,
       userName,
-      image
+      image,
+      isVerified
     },
- likes,
-
+    likes,
     comments[]{
       comment,
       _key,
       postedBy->{
-      _id,
-      userName,
-      image
-    },
+        _id,
+        userName,
+        image,
+        isVerified
+      },
     }
   }`;
 
@@ -135,63 +142,32 @@ export const userCreatedPostsQuery = (userId: string | string[]) => {
 export const userLikedPostsQuery = (userId: string | string[]) => {
   const query = `*[_type == 'post' && '${userId}' in likes[]._ref ] | order(_createdAt desc) {
     _id,
-     caption,
-       video{
-        asset->{
-          _id,
-          url
-        }
-      },
-      userId,
+    caption,
+    video{
+      asset->{
+        _id,
+        url
+      }
+    },
+    userId,
     postedBy->{
       _id,
       userName,
-      image
+      image,
+      isVerified
     },
- likes,
-
+    likes,
     comments[]{
       comment,
       _key,
       postedBy->{
-      _id,
-      userName,
-      image
-    },
-    }
-  }`;
-
-  return query;
-};
-
-export const topicPostsQuery = (topic: string | string[]) => {
-  const query = `*[_type == "post" && topic match '${topic}*'] {
-    _id,
-     caption,
-       video{
-        asset->{
-          _id,
-          url
-        }
+        _id,
+        userName,
+        image,
+        isVerified
       },
-      userId,
-    postedBy->{
-      _id,
-      userName,
-      image
-    },
- likes,
-
-    comments[]{
-      comment,
-      _key,
-      postedBy->{
-      _id,
-      userName,
-      image
-    },
     }
-  }`;
+  }`
 
   return query;
 };

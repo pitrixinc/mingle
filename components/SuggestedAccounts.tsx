@@ -43,7 +43,7 @@ const SuggestedAccounts: NextPage<IProps> = ({ fetchAllUsers, allUsers }) => {
               <div className="hidden xl:block">
                     <p className="flex gap-1 items-center text-md font-bold text-primary">
                       {user.userName}
-                      <GoVerified className="text-[#F51997]-400"/>
+                      {user.isVerified && <GoVerified className="text-blue-400"/>}
                     </p>
                     <p className=" text-gray-400 text-xs lowercase">
                      @{user.userName.replaceAll(' ','_')}

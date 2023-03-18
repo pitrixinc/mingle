@@ -18,7 +18,7 @@ import useAuthStore from '../store/authStore';
 import LikeButton from './LikeButton';
 import  axios from 'axios';
 import { BASE_URL } from '../utils';
-
+import moment from 'moment';
 
 interface IProps {
     post: Video;
@@ -149,6 +149,9 @@ const VideoCard: NextPage<IProps> = ({post}: IProps) => {
     }
   };
 
+const createdAt = new Date(post.createdAt).toLocaleDateString();
+
+ const formattedDate = moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a');
 
 
     return (
@@ -172,9 +175,10 @@ const VideoCard: NextPage<IProps> = ({post}: IProps) => {
               <div>
               <Link href={`/profile/${post.postedBy._id}`}>
                 <div className="flex items-center gap-2 mb-0">
-                    <p className="flex gap-2 items-center md:text-md font-bold text-primary">{post.postedBy.userName}  {' '} <GoVerified className="text-pink-400 text-md"/></p>
+                    <p className="flex gap-2 items-center md:text-md font-bold text-primary">{post.postedBy.userName} {' '}
+    {post.postedBy.isVerified && <GoVerified className="text-blue-400" />}</p>
                     <p className="font-medium text-xs text-gray-500 hidden md:block lowercase">{"@" + post.postedBy.userName.replace(" ","_")}</p> 
-                    <p className="font-medium text-xs text-gray-500 hidden md:block lowercase">{new Date (post.createdAt).toDateString()}</p>
+                    <p className="font-medium text-xs text-gray-500 hidden md:block lowercase">{formattedDate}</p>
                 </div>
               </Link>
               </div>

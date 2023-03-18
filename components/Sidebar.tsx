@@ -31,7 +31,7 @@ const Sidebar: NextPage = () => {
         {showSidebar ? <ImCancelCircle /> : <AiOutlineMenu />}
       </div>
       {showSidebar && (
-        <div className='xl:block md:block hidden xl:w-400 w-20 flex flex-col justify-start mb-10 border-r-2 border-gray-100 xl:border-0 p-3 shadow-2xl'>
+        <div className='xl:block md:block hidden xl:w-400 w-20 flex flex-col justify-start mb-10 border-r-2 border-gray-100 xl:border-0 p-3'>
           <div className='xl:border-b-2 border-gray-200 xl:pb-4'>
             <Link href='/'>
               <div className={pathname === '/' ? activeLink : normalLink}>
@@ -88,7 +88,7 @@ const Sidebar: NextPage = () => {
                  </Link>
               </div>
 
-              <div className="xl:border-b-2 border-gray-200 pb-1 shadow-lg">
+              <div className="xl:border-b-2 border-gray-200 pb-1">
                  <Link href="https://mymingle.netlify.app">
                   <div className="flex items-center gap-1 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
@@ -101,11 +101,11 @@ const Sidebar: NextPage = () => {
                  </Link>
               </div>
 
-          <div  className="shadow-lg">
+          <div  className="">
           <Discover />
           </div>
 
-          <div  className="shadow-lg">
+          <div  className="">
           <SuggestedAccounts
             fetchAllUsers={fetchAllUsers}
             allUsers={allUsers}
