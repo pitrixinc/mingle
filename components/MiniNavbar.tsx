@@ -48,10 +48,10 @@ const MiniNavbar = () => {
   }
 
   return (
-    <div className="w-full flex justify-between items-center border-b-2 border-gray-200 py-1 px-1 xl:hidden md:hidden block shadow-sm mt-0 h-16">
+    <div className="relative w-full flex justify-between items-center border-b-2 border-gray-200 py-1 px-1 xl:hidden md:hidden block shadow-sm mt-0 h-16">
         <div className="flex flex-wrap h-full sm:border-b-2 border-gray-200 pb-1">
                  <Link href="/">
-                  <div className="flex items-center gap-1 hover:bg-primary p-6 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
+                  <div className="flex items-center gap-1 hover:bg-primary py-6 px-2 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
                       <GoHome />
                       </p>
@@ -100,7 +100,7 @@ const MiniNavbar = () => {
 
               <div className="flex flex-wrap h-full sm:border-b-2 border-gray-200 pb-1">
                  <Link href="https://mymingle.netlify.app">
-                  <div className="flex items-center gap-1 hover:bg-primary p-6 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
+                  <div className="flex items-center gap-1 hover:bg-primary py-6 px-2 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
                       <SiYourtraveldottv />
                       </p>
