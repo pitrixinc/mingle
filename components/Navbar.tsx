@@ -69,6 +69,9 @@ const Navbar = () => {
                        <span className="hidden md:block">Upload</span>
                    </button>
                 </Link>
+                <div className=" px-2 md:px-4 text-md font-semibold flex items-center gap-2">
+                {userProfile.userName}
+                </div>
                 {userProfile.image && (
                   <Link href="/">
                   <>
@@ -82,6 +85,7 @@ const Navbar = () => {
                   </>
                 </Link>
                 )}
+                
                 <button
                   type="button"
                   className="px-2"

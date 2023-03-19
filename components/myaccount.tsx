@@ -21,7 +21,7 @@ interface IProps {
     }
 }
 
-const Profile = ({data}: IProps) => {
+const myAccount = ({data}: IProps) => {
   const { userProfile, addUser, removeUser } = useAuthStore();
     const [showUserVideos,setShowUserVideos] = useState(true);
     const [videosList, setVideosList] = useState<Video[]>([]);
@@ -127,4 +127,4 @@ export const getServerSideProps = async ({
    }
 }
 
-export default Profile;
+export default myAccount;

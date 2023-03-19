@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { GoVerified } from 'react-icons/go';
+import useAuthStore from '../store/authStore';
 
 import { IUser } from '../types';
 
@@ -16,7 +17,9 @@ const SuggestedAccounts: NextPage<IProps> = ({ fetchAllUsers, allUsers }) => {
     fetchAllUsers();
   }, [fetchAllUsers]);
 
+ const { userProfile }: any = useAuthStore();
   const users = allUsers
+     .filter((user) => user._id !== userProfile?._id)
     .sort(() => 0.5 - Math.random())
     .slice(0, allUsers.length);
 

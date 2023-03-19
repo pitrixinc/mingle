@@ -18,5 +18,17 @@ export default {
       title: 'Is Verified',
       type: 'boolean',
     },
+    {
+      name: 'followers',
+      title: 'Followers',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'user' }] }],
+    },
+    {
+      name: 'following',
+      title: 'Following',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'user' }] }],
+    },
   ],
 };

@@ -47,7 +47,7 @@ const Profile = ({data}: IProps) => {
             <div className="flex gap-6 md:gap-10 mb-4 bg-white w-full">
             <div className="w-16 h-16 md:w-32 md:h-32">
                     <Image
-                       src={user.image}
+                       src={userProfile.image}
                        width={120}
                        height={120}
                        className="rounded-full"
@@ -57,11 +57,11 @@ const Profile = ({data}: IProps) => {
                   </div>
                   <div className="flex flex-col justify-center">
                     <p className="md:text-2xl tracking-wider items-center justify-center flex gap-1 items-center text-md font-bold text-primary">
-                      {user.userName}
+                      {userProfile.userName}
                       <GoVerified className="text-pink-400"/>
                     </p>
                     <p className=" text-gray-400 text-xs md:text-xl lowercase">
-                     @{user.userName.replaceAll(' ','_')}
+                     @{userProfile.userName.replaceAll(' ','_')}
                     </p>
                     
                     <div className="flex justify-between text-gray-400 text-xs md:text-xl lowercase">
