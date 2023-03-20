@@ -209,7 +209,7 @@ const [showPicker, setShowPicker] = useState(false);
         <div className='flex flex-col gap-3 pb-10' ref={inputRef}>
           
       <label className='text-md font-semibold'>Caption</label>
-      <div className="flex  relative">
+      <div className="flex items-center relative">
 <input
   type='text'
   value={caption}
@@ -221,9 +221,9 @@ const [showPicker, setShowPicker] = useState(false);
           className='absolute right-0 top-0 h-full px-3'
           onClick={handleButtonClick}
         >
-          {showPicker ? 'Close' : '❤️'}
+          {showPicker ? '❌' : '❤️'}
         </button>
-        {showPicker && <EmojiPicker onEmojiClick={handleEmojiClick} />}
+        {showPicker && <div className="absolute top-[100%] left-0 z-index-1"> <EmojiPicker onEmojiClick={handleEmojiClick} /> </div>}
 </div>
 {hashtags.length > 0 && (
   <ul>
