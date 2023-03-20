@@ -195,7 +195,7 @@ const createdTime = new Date(post.createdAt).toLocaleDateString();
         {/* Display the "Read More" link if necessary */}
         {shouldShowReadMore &&
           <button 
-             className="text-blue-500 hover:underline ml-2"
+             className="text-pink-500 hover:underline ml-2"
              onClick={handleReadMoreClick}>
             {isExpanded ? '' : 'Read More'}
           </button>
