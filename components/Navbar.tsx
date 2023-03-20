@@ -69,7 +69,7 @@ const Navbar = () => {
                        <span className="hidden md:block">Upload</span>
                    </button>
                 </Link>
-                <div className="block sm-hidden px-2 md:px-4 text-md font-semibold flex items-center gap-2">
+                <div className="hidden md:block px-2 md:px-4 text-md font-semibold flex items-center gap-2">
                 {userProfile.userName}
                 </div>
                 {userProfile.image && (
