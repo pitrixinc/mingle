@@ -50,7 +50,7 @@ const MiniNavbar = () => {
 
   return (
     <div className="relative w-full flex justify-between items-center border-b-2 border-gray-200 py-1 px-1 xl:hidden md:hidden block shadow-sm mt-0 h-16 bg-white">
-        <div className="flex flex-wrap h-full sm:border-b-2 border-gray-200 pb-1">
+        <div className="z-index-1 flex flex-wrap h-full sm:border-b-2 border-gray-200 pb-1">
                  <Link href="/">
                   <div className="flex items-center gap-1 hover:bg-primary py-6 px-2 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
@@ -61,7 +61,7 @@ const MiniNavbar = () => {
                  </Link>
               </div>
 
-          <div className="flex flex-wrap h-full sm:border-b-2 border-gray-200 pb-1">
+          <div className="z-index-1 flex flex-wrap h-full sm:border-b-2 border-gray-200 pb-1">
                  <Link href="/MiniSearch">
                   <div className="flex items-center gap-1 hover:bg-primary py-6 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
@@ -73,7 +73,7 @@ const MiniNavbar = () => {
               </div>
 
           
-              <div className="flex flex-wrap h-full sm:border-b-2 border-gray-200 pb-1">
+              <div className="z-index-1 flex flex-wrap h-full sm:border-b-2 border-gray-200 pb-1">
                  <Link href="https://mymingle.netlify.app">
                   <div className="flex items-center gap-1 hover:bg-primary py-2 justify-center xl:justify-start cursor-pointer font-bold  rounded">
                   <div className={pathname === '/' ? activeLink : normalLink}>
@@ -86,7 +86,7 @@ const MiniNavbar = () => {
               </div>
 
 
-              <div className="flex flex-wrap h-full sm:border-b-2 border-gray-200 pb-1">
+              <div className="z-index-1 flex flex-wrap h-full sm:border-b-2 border-gray-200 pb-1">
                  <Link href="/">
                   <div className="flex items-center gap-1 hover:bg-primary py-6 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
@@ -99,7 +99,7 @@ const MiniNavbar = () => {
 
 
 
-              <div className="flex flex-wrap h-full sm:border-b-2 border-gray-200 pb-1">
+              <div className="z-index-1 flex flex-wrap h-full sm:border-b-2 border-gray-200 pb-1">
                  <Link href="https://mymingle.netlify.app">
                   <div className="flex items-center gap-1 hover:bg-primary py-6 px-2 justify-center xl:justify-start cursor-pointer font-bold text-black rounded">
                     <p className="text-2xl">
