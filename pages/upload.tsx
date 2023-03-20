@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { SanityAssetDocument } from '@sanity/client';
 import { useRouter } from 'next/router';
 import { FaCloudUploadAlt } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
 import axios from 'axios';
+import EmojiPicker from 'emoji-picker-react';
 
 import useAuthStore from '../store/authStore';
 import { BASE_URL } from '../utils';
@@ -106,6 +107,32 @@ const handleKeyPress = (event) => {
   }
 };
 
+const [showPicker, setShowPicker] = useState(false);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleButtonClick = () => {
+    setShowPicker(!showPicker);
+  };
+
+  const handleEmojiClick = (emoji) => {
+  const emojiValue = emoji.emoji;
+  setCaption(caption + emojiValue);
+  inputRef.current.focus();
+};
+
+
+  const handleClickOutside = (event) => {
+    if (inputRef.current && !inputRef.current.contains(event.target)) {
+      setShowPicker(false);
+    }
+  };
+
+
   return (
     <div className='flex w-full h-full absolute left-0 top-[60px] lg:top-[70px] mb-10 pt-10 lg:pt-20 bg-[#F8F8F8] justify-center'>
       <div className=' bg-white rounded-lg xl:h-[80vh] flex gap-6 flex-wrap justify-center items-center p-14 pt-6'>
@@ -179,17 +206,25 @@ const handleKeyPress = (event) => {
             </p>
           )}
         </div>
-        <div className='flex flex-col gap-3 pb-10'>
+        <div className='flex flex-col gap-3 pb-10' ref={inputRef}>
           
       <label className='text-md font-semibold'>Caption</label>
+      <div className="flex  relative">
 <input
   type='text'
   value={caption}
   onChange={(e) => setCaption(e.target.value)}
   onKeyPress={handleKeyPress}
-  className='rounded lg:after:w-650 outline-none text-md border-2 border-gray-200 p-2'
+  className='flex-1  rounded lg:after:w-650 outline-none text-md border-2 border-gray-200 p-2'
 />
-
+<button
+          className='absolute right-0 top-0 h-full px-3'
+          onClick={handleButtonClick}
+        >
+          {showPicker ? 'Close' : '❤️'}
+        </button>
+        {showPicker && <EmojiPicker onEmojiClick={handleEmojiClick} />}
+</div>
 {hashtags.length > 0 && (
   <ul>
     {hashtags.map((tag) => (
