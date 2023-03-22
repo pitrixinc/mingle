@@ -191,7 +191,7 @@ const createdTime = new Date(post.createdAt).toLocaleDateString();
                 className="rounded-3xl mr-0">
                 {/* Display the first 15 words of the caption */}
       <p className="px-1 ml-0 mb-2 mt-2 mr-0 md:text-md text-md text-primary text-justify justify-center">
-        {isExpanded ? post.caption : `${captionPreview} ... `}
+        {isExpanded ? post.caption : `${captionPreview} `}
         {/* Display the "Read More" link if necessary */}
         {shouldShowReadMore &&
           <button 
