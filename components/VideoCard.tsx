@@ -217,7 +217,7 @@ const createdTime = new Date(post.createdAt).toLocaleDateString();
                     <video
                        loop
                        ref={videoRef}
-                       className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[320px] w-[100%] w-full sm:w-full aspect-video md:rounded xl:rounded cursor-pointer bg-black mr-0 object-cover"
+                       className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[320px] w-[100%] w-full aspect-video md:rounded xl:rounded cursor-pointer bg-black mr-0"
                        src={post.video.asset.url}
                     >
                      
