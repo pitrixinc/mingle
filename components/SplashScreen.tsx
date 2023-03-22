@@ -2,8 +2,10 @@ import React from 'react';
 import Image from 'next/image';
 import Logo from '../utils/mingle.png';
 
+import useAuthStore from '../store/authStore';
 
 const SplashScreen = () => {
+    const { userProfile, addUser, removeUser } = useAuthStore();
   return (
     <div className="flex flex-col items-center justify-center h-screen">
      <div className="w-[100px] md:w-[130px]">
@@ -28,7 +30,11 @@ const SplashScreen = () => {
 
         </div>
       
-      
+      {userProfile && 
+            <div className="px-2 md:px-4 text-md font-semibold items-center mt-10">
+                       <span className="">❤️ Welcome back {userProfile.userName} ❤️</span>
+                   </div>
+      }
       
     </div>
   );
