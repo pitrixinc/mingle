@@ -30,10 +30,16 @@ const SplashScreen = () => {
 
         </div>
       
-      {userProfile && 
+      {userProfile ? ( 
             <div className="px-2 md:px-4 text-md font-semibold items-center mt-10">
                        <span className="">❤️ Welcome back {userProfile.userName} ❤️</span>
                    </div>
+                   ): (
+                   <div className="px-2 md:px-4 text-sm font-bold items-center mt-10">
+                       <span className="">❤️ Project made by Kennedy Addo Quaye ❤️</span>
+                   </div>
+                   
+                   )
       }
       
     </div>
