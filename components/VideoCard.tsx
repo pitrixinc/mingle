@@ -191,7 +191,7 @@ const createdTime = new Date(post.createdAt).toLocaleDateString();
                 className="rounded-3xl mr-0">
                 {/* Display the first 15 words of the caption */}
       <p className="px-1 ml-0 mb-2 mt-2 mr-0 md:text-md text-md text-primary text-justify justify-center">
-        {isExpanded ? post.caption : `${captionPreview} `}
+        {isExpanded ? post.caption : `${captionPreview} . `}
         {/* Display the "Read More" link if necessary */}
         {shouldShowReadMore &&
           <button 
@@ -217,7 +217,7 @@ const createdTime = new Date(post.createdAt).toLocaleDateString();
                     <video
                        loop
                        ref={videoRef}
-                       className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[320px] w-[100%] w-full aspect-video md:rounded xl:rounded cursor-pointer bg-black mr-0 sm:min-w-full sm:w-[100%]"
+                       className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[320px] w-[100%] w-full aspect-video md:rounded xl:rounded cursor-pointer bg-black mr-0"
                        src={post.video.asset.url}
                     >
                      
