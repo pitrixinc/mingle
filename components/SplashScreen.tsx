@@ -31,7 +31,7 @@ const SplashScreen = () => {
         </div>
       
       {userProfile ? ( 
-            <div className="px-2 md:px-4 text-md font-semibold items-center mt-10">
+            <div className="px-2 md:px-4 text-sm font-semibold items-center mt-10">
                        <span className="">❤️ Welcome back {userProfile.userName} ❤️</span>
                    </div>
                    ): (
