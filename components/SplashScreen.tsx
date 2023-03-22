@@ -8,7 +8,7 @@ const SplashScreen = () => {
     const { userProfile, addUser, removeUser } = useAuthStore();
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-     <div className="w-[100px] md:w-[130px]">
+     <div className="w-[170px] md:w-[200px]">
               <Image 
                 className="cursor-pointer"
                 src={Logo}
