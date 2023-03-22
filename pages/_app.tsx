@@ -26,7 +26,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     // When done, set isReady to true to show the app
      setTimeout(() => {
       setIsReady(true);
-    }, 3000);
+    }, 5000);
   }, []);
 
 if(isSSR) return null;
