@@ -50,10 +50,21 @@ const Upload = () => {
     }
   };
 
+const [error, setError] = useState(null);
+
 const [hashtags, setHashtags] = useState([]);
   const handlePost = async () => {
   if (caption && videoAsset?._id && topic) {
     setSavingPost(true);
+    
+    const words = caption.trim().split(' ');
+  if (words.length < 10) {
+    setError('Please enter at least ten words');
+    return;
+  } else {
+    // Submit the form
+    setSavingPost(true);
+  }
 
     // Extract hashtags from caption
     const hashtagRegex = /(?:^|\s)(?:#)([a-zA-Z\d]+)/gm;
@@ -225,6 +236,7 @@ const [showPicker, setShowPicker] = useState(false);
         </button>
         {showPicker && <div className="absolute top-[100%] left-0 z-index-1"> <EmojiPicker onEmojiClick={handleEmojiClick} /> </div>}
 </div>
+{error && <p className="text-red-500">{error}</p>}
 {hashtags.length > 0 && (
   <ul>
     {hashtags.map((tag) => (
