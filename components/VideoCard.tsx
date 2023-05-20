@@ -192,7 +192,7 @@ const createdTime = new Date(post.createdAt).toLocaleDateString();
                 {/* Display the first 15 words of the caption */}
       <p className="px-1 ml-0 mb-2 mt-2 mr-0 md:text-md text-md text-primary text-justify justify-center">
         {isExpanded ? post.caption : `${captionPreview} . `}
-        {/* Display the "Read More" link if necessary */} 🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍
+        {/* Display the "Read More" link if necessary */} 🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍
         {shouldShowReadMore &&
           <button 
              className="text-pink-500 hover:underline ml-2"
